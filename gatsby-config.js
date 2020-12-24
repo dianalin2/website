@@ -1,33 +1,27 @@
 module.exports = {
   pathPrefix: '/csc',
   plugins: [
-    "gatsby-plugin-theme-ui",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-offline",
+    'gatsby-plugin-theme-ui',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-smoothscroll',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        icon: "src/images/icon.png",
+        path: `${__dirname}/src/images`,
       },
     },
   ],
   siteMetadata: {
     title: 'TJCSC',
-    titleTemplate: '%s - TJCSC',
     description:
-      'TJHSST Computer Security Club is designed to introduce students to ' +
-      'and pique their interests in a field which is readily gaining importance ' +
-      'in an increasingly technology-dependant world.',
-    image: '/csc/meta.png',
-    url: 'https://activities.tjhsst.edu/csc',
+      'TJHSST Computer Security Club is designed to introduce students to ethical hacking',
+    url: 'https://activities.tjhsst.edu',
     menuLinks: [
       {
         name: 'Presentations',
         link: '/presentations',
-      },
-      {
-        name: 'Schedule',
-        link: '/schedule',
       },
       {
         name: 'CTF',

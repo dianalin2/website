@@ -1,23 +1,36 @@
-import 'fontsource-open-sans/400.css'
-import 'fontsource-open-sans/700.css'
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/700.css'
 
 export default {
   breakpoints: [
     '40em', '56em', '64em',
   ],
+  buttons: {
+    primary: {
+      color: 'background',
+      bg: 'primary',
+      cursor: 'pointer',
+      fontFamily: 'body',
+      '&:hover': {
+        bg: 'secondary',
+      },
+    },
+  },
   colors: {
-    text: '#5a5a5a',
-    background: '#ffffff',
-    primary: '#008bff',
-    secondary: '#23527c',
-    accent: '#ffffff',
-    highlight: '#b7b7fe',
+    text: '#ffffff',
+    background: '#00060C',
+    primary: '#CFE4FF',
+    secondary: '#AED1FE',
+    accent: '#D67C78',
+    highlight: '#FFDB78',
     muted: '#eeeeee',
-    inverse: '#ffffff',
+    altBackground: '#0B1117',
+    lightBackground: '#192128',
+    navbar: '#000000',
   },
   fonts: {
-    body: 'Open Sans, system-ui, sans-serif',
-    heading: 'Open Sans, system-ui, sans-serif',
+    body: 'Inter, system-ui, sans-serif',
+    heading: 'Inter, system-ui, sans-serif',
     monospace: 'Menlo, monospace',
   },
   fontSizes: [
@@ -25,12 +38,16 @@ export default {
   ],
   fontWeights: {
     body: 400,
-    heading: 400,
+    heading: 700,
     bold: 700,
   },
   lineHeights: {
     body: 1.5,
     heading: 1.125,
+  },
+  sizes: {
+    navbar: '90px',
+    container: '50rem',
   },
   styles: {
     root: {
@@ -40,12 +57,10 @@ export default {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'stretch',
+      scrollBehavior: 'smooth',
     },
-  },
-  space: {
-    navbar: '4rem',
-  },
-  sizes: {
-    container: '50rem',
+    a: {
+      color: 'text',
+    },
   },
 }

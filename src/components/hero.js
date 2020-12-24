@@ -1,31 +1,17 @@
 /** @jsx jsx */
-import { Box, jsx } from 'theme-ui'
+import { Heading, jsx } from 'theme-ui'
 
-const Hero = ({ children, big, ...props }) => (
-  <Box
+import Container from './container'
+
+const Hero = ({ title, ...props }) => (
+  <Container
     {...props}
     sx={{
-      p: '2rem',
-      pt: theme => `calc(3rem + ${theme.space.navbar})`,
-      backgroundColor: 'primary',
-      minHeight: (big) ? '75vh' : '20rem',
-      color: 'inverse',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      'h1': {
-        fontSize: 6,
-      },
-      '& > *': {
-        textAlign: 'center',
-        maxWidth: 'container',
-        width: '90%',
-      },
+      pt: theme => `calc(2rem + ${theme.sizes.navbar})`,
     }}
   >
-    {children}
-  </Box>
+    <Heading as='h1' sx={{ fontSize: 6 }}>{title}</Heading>
+  </Container>
 )
 
 export default Hero
