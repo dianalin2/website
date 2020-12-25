@@ -10,7 +10,7 @@ const Hero = ({ title, ...props }) => (
       pt: theme => `calc(2rem + ${theme.sizes.navbar})`,
     }}
   >
-    <Heading as='h1' sx={{ fontSize: 6 }}>{title}</Heading>
+    <Heading as='h1' sx={{ fontSize: [5, 6, 7] }}>{title}</Heading>
   </Container>
 )
 

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Box, Button, Flex, Grid, Heading, jsx } from 'theme-ui'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 
@@ -9,7 +9,7 @@ import Container from '../components/container'
 
 import CircuitBoard from '../images/circuit-board.svg'
 
-const Index = () => {
+const Index = ({ data }) => {
   const {
     site: {
       siteMetadata: {
@@ -21,7 +21,7 @@ const Index = () => {
         fluid: image,
       },
     },
-  } = useStaticQuery(query)
+  } = data
   return (
     <Layout>
       <Flex
@@ -111,7 +111,7 @@ const Index = () => {
 
 export default Index
 
-const query = graphql`
+export const query = graphql`
   query Home {
     site {
       siteMetadata {

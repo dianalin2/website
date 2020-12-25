@@ -1,0 +1,47 @@
+- title: Introduction
+  date: 9/30/2020
+  body: Brief introduction of the club, including an overview of topics and Capture
+    the Flag competitions
+  level: 1
+  link: https://docs.google.com/presentation/d/1dVgI2fHgNCztCMbeCd8bsH60u9Ac6CsUAkBMGjGYnEE/
+- title: Linux Basics
+  date: 10/7/2020
+  body: Brief introduction to Linux, and using the Linux command line
+  level: 1
+  link: https://docs.google.com/presentation/d/1ZweQoDUzVi_UcrzSckP2lX1yV8U7Ikg65wJWSO3zM7Q/
+- title: Python Basics
+  date: 10/14/2020
+  body: Introduction to Python basics
+  level: 1
+  link: https://docs.google.com/presentation/d/1sNxt6Rg_o0coigQEQCnIvYIZmLcvAuq7x7dbyDg_LDk
+- title: Crypto Intro
+  date: 10/21/2020
+  body: An introduction to number systems (binary, hex, etc.) & basic cryptography
+    (XOR, Cipher, Hashing)
+  level: 1
+  link: https://docs.google.com/presentation/d/1AskKJuBeFw9kN7jHPFTSC9f-lNDDeVE9PzowUPUk7gg/
+- title: Web Intro
+  date: 10/28/2020
+  body: An introduction to the basics of web exploitation
+  level: 1
+  link: https://docs.google.com/presentation/d/1wBkieoR00eGCoUVH_3vnqAJqXFUB-ny94GtsqQHwIkU/
+- title: SQL Inection
+  date: 11/4/2020
+  body: An overview of SQL Injection (syntax, union-based SQLi, filtration, etc.)
+  level: 2
+  link: https://docs.google.com/presentation/d/1wS2jfVR_Jf826Axu5uOY9Apmm87GKRmJ_wAqmA_V0N8/
+- title: JSON Web Tokens
+  date: 11/11/2020
+  body: JWTs, and how to exploit them
+  level: 2
+  link: https://docs.google.com/presentation/d/1Hg5PvnGQnwCdFXkksPU3t4fWBYEVvwvAL124lyHG90k/edit?usp=sharing/
+- title: Introduction to RSA
+  date: 12/2/2020
+  body: An introduction to the RSA cryptosystem
+  level: 2
+  link: https://docs.google.com/presentation/d/1p_hq5lG2N0fEuZaR6Y2ENHy73tX6OUllRunAC4th_t8/edit?usp=sharing
+- title: RSA Attacks
+  date: 12/9/2020
+  body: An outline of various attacks on RSA
+  level: 2
+  link: https://docs.google.com/presentation/d/1-6uLOp_8zf8APhJVNJXAEgux48jebDvdB2i5W1jq208/edit?usp=sharing
