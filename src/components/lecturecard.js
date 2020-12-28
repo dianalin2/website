@@ -26,7 +26,7 @@ const LectureCard = ({ body, date, level, title, link, ...props }) => {
         bg: 'lightBackground',
         borderRadius: 4,
         padding: 4,
-        alignItems: 'flex-start',
+        alignItems: 'stretch',
         flexDirection: 'column',
         justifyContent: 'space-between',
         '& > *': {
@@ -78,17 +78,21 @@ const LectureCard = ({ body, date, level, title, link, ...props }) => {
       >
         {display}
       </Text>
-      <Button
+      <Flex
         sx={{
+          flexDirection: ['column', null, 'row'],
           mt: 3,
         }}
-        as='a'
-        href={link}
-        target='_blank'
-        rel='noopener noreferrer'
       >
-        Presentation
-      </Button>
+        <Button
+          as='a'
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Presentation
+        </Button>
+      </Flex>
     </Flex>
   )
 }

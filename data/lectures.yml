@@ -25,7 +25,7 @@
   body: An introduction to the basics of web exploitation
   level: 1
   link: https://docs.google.com/presentation/d/1wBkieoR00eGCoUVH_3vnqAJqXFUB-ny94GtsqQHwIkU/
-- title: SQL Inection
+- title: SQL Injection
   date: 11/4/2020
   body: An overview of SQL Injection (syntax, union-based SQLi, filtration, etc.)
   level: 2

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Flex, jsx } from 'theme-ui'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import Headroom from 'react-headroom'
 import Hamburger from 'react-hamburger-menu'
 import { graphql, useStaticQuery } from 'gatsby'
@@ -54,8 +54,10 @@ const Navbar = () => {
       sx={{
         position: 'fixed',
         width: '100%',
+        height: '0px !important',
         zIndex: 999,
         '& > .headroom': {
+          height: 'navbar',
           py: '2rem',
           px: ['2rem', '3rem', '4rem'],
           display: 'flex',
@@ -95,7 +97,7 @@ const Navbar = () => {
       <NavLink to='/' sx={{ fontWeight: 'bold' }}>{title}</NavLink>
       <Hamburger
         isOpen={isOpen}
-        menuClicked={() => setIsOpen(!isOpen)}
+        menuClicked={useCallback(() => {setIsOpen(open => !open)}, [])}
         width={18}
         height={15}
         strokeWidth={2}
@@ -124,11 +126,11 @@ const Navbar = () => {
           },
         }}
       >
-        {menuLinks.map(({ name, link }) => (
+        {menuLinks.map(({ name, link }, i) => (
           <NavLink
-            key={name}
+            key={i}
             to={link}
-            activeClassName={'active'}
+            activeClassName='active'
             partiallyActive={true}
             sx={{
               ml: [0, null, '2rem'],

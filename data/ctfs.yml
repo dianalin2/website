@@ -1,0 +1,816 @@
+- name: picoCTF Mini
+  startDate: 10/1/2020 16:00:00
+  endDate: 10/30/2020 19:00:00
+  link: https://picoctf.org/competitions/2020-fall.html
+- name: CSAW RED
+  startDate: 9/18/2020 16:00:00
+  endDate: 9/27/2020 16:00:00
+  link: https://red.csaw.io/
+- name: TJCTF 2020
+  startDate: 5/22/2020 11:00:00
+  endDate: 5/26/2020 11:00:00
+  link: https://tjctf.org/
+  tjParticipants:
+  - rank: 26
+    team: Hocus, Pocus, Your Team is Bogus
+    score: 1400
+  - rank: 55
+    team: Wow
+    score: 1010
+  - rank: 88
+    team: OPSEC
+    score: 720
+  - rank: 127
+    team: Zaqueems
+    score: 570
+  - rank: 156
+    team: Lamebots
+    score: 480
+  - rank: 168
+    team: blockchain
+    score: 435
+- name: ångstromCTF 2020
+  startDate: 3/14/2020 00:00:00
+  endDate: 3/19/2020 00:00:00
+  link: https://2020.angstromctf.com/
+  tjParticipants:
+  - rank: 30
+    team: tjcsc
+    score: 3995
+  - rank: 369
+    team: Underdog Check Your Logs
+    score: 1090
+  - rank: 426
+    team: 4B1Y
+    score: 935
+  - rank: 744
+    team: kryptonite
+    score: 365
+  - rank: 908
+    team: Lamebots
+    score: 245
+  - rank: 1278
+    team: Eternal Atake 4/10
+    score: 90
+  - rank: 1343
+    team: crystalWorlds
+    score: 60
+- name: RUSecureCTF 2020
+  startDate: 2/24/2020 12:00:00
+  endDate: 3/6/2020 12:00:00
+  link: https://rusecurectf.radford.edu/
+  tjParticipants:
+  - rank: 9
+    team: TJCSC
+    score: 101800
+  - rank: 33
+    team: 3B1Y
+    score: 54850
+  - rank: 49
+    team: TJHSST
+    score: 22050
+  - rank: 94
+    team: Lamebots
+    score: 6500
+  - rank: 136
+    team: blockchain
+    score: 1800
+  - rank: 166
+    team: kryptonite
+    score: 500
+- name: CSAW CTF Final Round 2019
+  startDate: 11/6/2019 19:00:00
+  endDate: 11/8/2019 14:00:00
+  link: http://ctf.csaw.io/
+- name: Lockheed Martin CyberQuest 2019
+  startDate: 10/26/2019 11:30:00
+  endDate: 10/26/2019 2:30:00
+  link: http://ctf.csaw.io/
+  tjParticipants:
+  - rank: 2
+    team: tjcsc
+    score: 400
+- name: picoCTF 2019
+  startDate: 9/27/2019 12:00:00
+  endDate: 10/11/2019 12:00:00
+  link: https://2019game.picoctf.com/
+  tjParticipants:
+  - rank: 9
+    team: tjcsc
+    score: 32701
+  - rank: 31
+    team: OPSEC
+    score: 26151
+  - rank: 41
+    team: Lamebots
+    score: 22301
+  - rank: 119
+    team: i hate dan healey
+    score: 14851
+  - rank: 208
+    team: agcdragon2
+    score: 11600
+  - rank: 215
+    team: DEK'd
+    score: 10800
+  - rank: 444
+    team: P coming through
+    score: 6700
+  - rank: 2008
+    team: VAPatriot Scuba Squad
+    score: 1250
+  - rank: 2032
+    team: rfm0905
+    score: 1250
+  - rank: 2150
+    team: PyroBorg
+    score: 1100
+  - rank: 3353
+    team: akarp
+    score: 250
+  - rank: 4200
+    team: GildedBaboon
+    score: 100
+  - rank: 4380
+    team: SG123
+    score: 100
+  - rank: 4398
+    team: bluehelium
+    score: 100
+- name: CSAW CTF Qualification Round 2019
+  startDate: 9/13/2019 20:00:00
+  endDate: 9/15/2019 20:00:00
+  link: http://ctf.csaw.io/
+- name: RedpwnCTF 2019
+  startDate: 8/12/2019 16:00:00
+  endDate: 8/16/2019 16:00:00
+  link: https://redpwn.net/
+  tjParticipants:
+  - rank: 16
+    team: tjcsc
+    score: 6197
+- name: HSCTF 6
+  startDate: 6/3/2019 7:00:00
+  endDate: 6/7/2019 19:00:00
+  link: https://hsctf.com/
+- name: Facebook CTF 2019
+  startDate: 6/1/2019 0:00:00
+  endDate: 6/3/2019 0:00:00
+  link: http://www.fbctf.com/
+- name: ångstromCTF 2019
+  startDate: 4/20/2019 0:00:00
+  endDate: 4/25/2019 0:00:00
+  link: https://2019.angstromctf.com/
+- name: TJCTF 2019
+  startDate: 4/5/2019 23:00:00
+  endDate: 4/9/2019 23:00:00
+  link: https://tjctf.org/
+- name: TAMUctf 2019
+  startDate: 2/23/2019 0:00:00
+  endDate: 3/4/2019 0:00:00
+  link: https://tamuctf.com/
+- name: MITRE STEM CTF 2019
+  startDate: 1/11/2019 14:00:00
+  endDate: 1/12/2019 14:00:00
+  link: https://mitrestemctf.org/
+- name: Lockheed Martin CYBERQUEST
+  startDate: 10/20/2018 10:00:00
+  endDate: 10/20/2018 15:30:00
+  link: https://www.lockheedmartin.com/en-us/who-we-are/communities/cyber-quest.html
+  tjParticipants:
+  - rank: 1
+    team: tjcsc
+    score: 435
+- name: picoCTF 2018
+  startDate: 9/28/2018 12:00:00
+  endDate: 10/12/2018 12:00:00
+  link: https://picoctf.com/
+  tjParticipants:
+  - rank: 7
+    team: tjcsc
+    score: 31685
+  - rank: 79
+    team: NoCaptainsHere
+    score: 12260
+  - rank: 86
+    team: Wow2
+    score: 11485
+  - rank: 112
+    team: The JareBares
+    score: 9935
+  - rank: 130
+    team: tj csc
+    score: 9035
+  - rank: 167
+    team: SAD team
+    score: 7885
+  - rank: 424
+    team: qubits
+    score: 3960
+  - rank: 448
+    team: jhynx
+    score: 3785
+  - rank: 1028
+    team: redjackt
+    score: 1460
+  - rank: 1273
+    team: picobrains
+    score: 1110
+  - rank: 1628
+    team: BigIgg
+    score: 750
+  - rank: 1907
+    team: Snoopy0779
+    score: 575
+  - rank: 2173
+    team: incognitofox
+    score: 425
+  - rank: 2232
+    team: ERMS + 1
+    score: 400
+  - rank: 2744
+    team: VApatriot1
+    score: 250
+  - rank: 2814
+    team: zzx
+    score: 200
+- name: CSAW Red Team Competition
+  startDate: 9/21/2018 16:00:00
+  endDate: 9/30/2018 16:00:00
+  link: https://csaw.engineering.nyu.edu/RED
+  tjParticipants:
+  - rank: 4
+    team: kelly
+    score: 7335
+- name: TJCTF 2018
+  startDate: 8/6/2018 21:00:00
+  endDate: 8/12/2018 21:00:00
+  link: https://tjctf.org/
+- name: HSCTF 2018
+  startDate: 5/19/2018
+  endDate: 5/26/2018
+  link: https://hsctf.com/
+  tjParticipants:
+  - rank: 6
+    team: tjcsc
+    score: 7525
+- name: MITRE STEM CTF 2018
+  startDate: 4/20/2018 15:00:00
+  endDate: 4/21/2018 15:00:00
+  link: http://mitrecyberacademy.org/competitions/
+- name: PACTF 2018
+  startDate: 4/16/2018
+  endDate: 4/30/2018
+  link: https://2017.pactf.com/
+- name: RUSecure CTF 2018 Qualifying Round
+  startDate: 3/17/2018
+  endDate: 3/31/2018
+  link: https://www.radford.edu/content/csat/home/itec/rusecure-ctf-contest.html
+- name: ångstromCTF 2018
+  startDate: 3/16/2018 20:00:00
+  endDate: 3/21/2018 20:00:00
+  link: https://angstromctf.com/
+- name: EasyCTF 2018
+  startDate: 2/9/2018
+  endDate: 2/19/2018
+  link: https://www.easyctf.com/
+  tjParticipants:
+  - rank: 3
+    team: Sice Squad
+    score: 5606
+  - rank: 4
+    team: Ter  Martirosyan
+    score: 5606
+  - rank: 8
+    team: extradit3d parser!
+    score: 5356
+  - rank: 79
+    team: not plad shirts
+    score: 2216
+  - rank: 127
+    team: ion
+    score: 1536
+  - rank: 128
+    team: TheJareBears
+    score: 1506
+  - rank: 132
+    team: Lamebots
+    score: 1481
+  - rank: 138
+    team: Wow
+    score: 1441
+  - rank: 297
+    team: UgandanKnuckles
+    score: 841
+  - rank: 538
+    team: Yutin
+    score: 490
+  - rank: 671
+    team: The P3nguins
+    score: 391
+  - rank: 723
+    team: 01010111 01101001 01101110
+    score: 360
+  - rank: 946
+    team: Dan's Team
+    score: 261
+  - rank: 1032
+    team: Jurjito Burrito Support Group
+    score: 230
+  - rank: 1153
+    team: easyctf {0_0_F}
+    score: 190
+  - rank: 1187
+    team: oneperson
+    score: 180
+  - rank: 1272
+    team: xddd
+    score: 160
+  - rank: 1285
+    team: La Flame
+    score: 150
+  - rank: 1350
+    team: EndlessVoid
+    score: 130
+  - rank: 1364
+    team: ezcodez
+    score: 121
+  - rank: 1588
+    team: Uno
+    score: 50
+  - rank: 1670
+    team: turtles
+    score: 20
+  - rank: 1683
+    team: Neam Tame
+    score: 20
+  - rank: 1709
+    team: Coding Crew
+    score: 10
+- name: RUSecure CTF 2017 Preliminary Round
+  startDate: 11/6/2017 9:00:00
+  endDate: 12/9/2017 12:00:00
+  link: https://www.radford.edu/content/csat/home/itec/rusecure-ctf-contest.html
+- name: HSF 2017 Qualification Round
+  startDate: 9/22/2017
+  endDate: 10/2/2017
+  link: https://csaw.engineering.nyu.edu/hsf
+  tjParticipants:
+  - rank: 6
+    team: Parse It Up!
+    score: 5881
+  - rank: 30
+    team: Shwetark Patel
+    score: 2206
+  - rank: 70
+    team: Freshmen
+    score: 1206
+  - rank: 80
+    team: abacaxi
+    score: 1126
+  - rank: 84
+    team: bigPARSEME
+    score: 1076
+  - rank: 106
+    team: Blame Omkar
+    score: 856
+  - rank: 146
+    team: The P3nguins
+    score: 466
+  - rank: 155
+    team: SheHasBigParser
+    score: 376
+  - rank: 191
+    team: TJ Team 10
+    score: 271
+  - rank: 206
+    team: rm -rf /
+    score: 196
+  - rank: 226
+    team: tj123
+    score: 116
+  - rank: 235
+    team: Aneesh Kotnana
+    score: 116
+  - rank: 279
+    team: Karel.destroy()
+    score: 46
+  - rank: 332
+    team: fjkafhfeefaw
+    score: 16
+- name: CSAW 2017 Qualification Competition
+  startDate: 9/15/2017
+  endDate: 9/17/2017
+  link: https://csaw.engineering.nyu.edu/ctf
+- name: MITRE STEM CTF 2017
+  startDate: 9/15/2017
+  endDate: 9/16/2017
+  link: http://mitrecyberacademy.org/competitions/
+- name: HSCTF 2017
+  startDate: 5/20/2017
+  endDate: 5/27/2017
+  link: https://hsctf.com/
+  tjParticipants:
+  - rank: 2
+    team: parse it up
+    score: 8850
+  - rank: 17
+    team: phsst
+    score: 5750
+  - rank: 68
+    team: 1 and 0nly
+    score: 2450
+  - rank: 330
+    team: Turner Burners
+    score: 550
+- name: PACTF 2017
+  startDate: 4/16/2017
+  endDate: 4/30/2017
+  link: https://2017.pactf.com/
+- name: ångstromCTF 2017
+  startDate: 4/22/2017
+  endDate: 4/29/2017
+  link: https://angstromctf.com/
+- name: picoCTF 2017
+  startDate: 3/31/2017
+  endDate: 4/14/2017
+  link: https://2017.picoctf.com/
+- name: RUSecure CTF 2017 Qualifying Round
+  startDate: 3/18/2017
+  endDate: 4/1/2017
+  link: https://www.radford.edu/content/csat/home/itec/rusecure-ctf-contest.html
+  tjParticipants:
+  - rank: 1
+    team: hungry hippos
+- name: EasyCTF 2017
+  startDate: 3/13/2017
+  endDate: 3/20/2017
+  link: https://easyctf.com/
+  tjParticipants:
+  - rank: 3
+    team: phsst
+    score: 8455
+  - rank: 23
+    team: EASYCTF IS MY ******
+    score: 5435
+  - rank: 176
+    team: idk
+    score: 1800
+  - rank: 316
+    team: Script Adults
+    score: 1080
+  - rank: 331
+    team: whapplez_is_a_bot
+    score: 1040
+  - rank: 431
+    team: bts
+    score: 770
+  - rank: 469
+    team: Biggest Parser
+    score: 680
+  - rank: 892
+    team: TJ Smash
+    score: 255
+  - rank: 1159
+    team: I Don't Have a Team Name
+    score: 140
+  - rank: 1174
+    team: brownies
+    score: 140
+  - rank: 1278
+    team: Jellymelonwaterfish
+    score: 110
+  - rank: 1324
+    team: asdfjkl;
+    score: 95
+  - rank: 1509
+    team: sql_inj3ct3d
+    score: 40
+  - rank: 1533
+    team: sql_inj3ct10n
+    score: 35
+  - rank: 1549
+    team: SoumithGorillas
+    score: 35
+  - rank: 1753
+    team: Hackerman
+    score: 10
+  - rank: 1761
+    team: uh what's a good name
+    score: 10
+- name: School CTF 2016
+  startDate: 11/6/2016 1:00:00
+  endDate: 11/6/2016 9:00:00
+  link: https://school-ctf.org
+- name: RUSecure CTF 2016 Preliminary Round
+  startDate: 10/29/2016
+  endDate: 11/12/2016
+  link: https://www.radford.edu/content/csat/home/itec/rusecure-ctf-contest.html
+  tjParticipants:
+  - rank: 1
+    team: hungry hippos
+    score: 74467
+  - rank: 2
+    team: The Deductive Fuzzyhashers 2.0
+    score: 74467
+  - rank: 5
+    team: jffknight
+    score: 72967
+- name: CSAW HSF Quals 2016
+  startDate: 9/28/2016
+  endDate: 10/8/2016
+  link: https://csaw.engineering.nyu.edu/hsf
+  tjParticipants:
+  - rank: 4
+    team: µ's
+    score: 4725
+  - rank: 12
+    team: MegaMeta
+    score: 4225
+  - rank: 17
+    team: BandhiG
+    score: 3825
+  - rank: 26
+    team: The Deductive Fuzzyhashers 2.0
+    score: 3825
+  - rank: 30
+    team: hungry hippos
+    score: 3725
+  - rank: 40
+    team: SegFault
+    score: 3275
+  - rank: 163
+    team: Logger Turtles
+    score: 800
+  - rank: 256
+    team: Dark Army
+    score: 275
+  - rank: 295
+    team: DekaZane
+    score: 175
+  - rank: 328
+    team: I Don't Have A Team Name
+    score: 125
+  - rank: 373
+    team: JellyMellon
+    score: 75
+- name: MITRE STEM CTF 2016
+  startDate: 9/16/2016
+  endDate: 9/17/2016
+  link: http://mitrecyberacademy.org/competitions/
+  tjParticipants:
+  - rank: 13
+    team: The Flying Penguins
+    score: 510
+- name: ABCTF 2016
+  startDate: 7/15/2016
+  endDate: 7/22/2016
+  link: http://abctf.xyz
+  tjParticipants:
+  - rank: 1
+    team: µ's
+    score: 4505
+  - rank: 106
+    team: Some Random Team
+    score: 1645
+  - rank: 288
+    team: hungry hippos
+    score: 650
+  - rank: 332
+    team: i try so hard but its still so small
+    score: 490
+  - rank: 412
+    team: wumbii
+    score: 330
+  - rank: 637
+    team: Blue
+    score: 50
+  - rank: 681
+    team: I Don't Have a Team Name
+    score: 25
+  - rank: 719
+    team: bunny
+    score: 20
+- name: TJCTF 2016
+  startDate: 5/27/2016
+  endDate: 5/30/2016
+  link: https://tjctf.org/
+- name: PACTF 2016
+  startDate: 4/10/2016
+  endDate: 5/1/2016
+  link: https://www.pactf.com/
+  tjParticipants:
+  - rank: 12
+    team: TJ CSL
+    score: 1871
+- name: sCTF 2016 Q1
+  startDate: 4/8/2016
+  endDate: 4/15/2016
+  link: https://compete.sctf.io/2016q1/
+- name: CamsCTF 2016
+  startDate: 3/20/2016
+  endDate: 3/27/2016
+  link: http://camsctf.com/
+  tjParticipants:
+  - rank: 1
+    team: µ's
+    score: 9990
+  - rank: 8
+    team: OM3G4
+    score: 5193
+  - rank: 11
+    team: TJ CSL
+    score: 4588
+  - rank: 85
+    team: swytch
+    score: 755
+  - rank: 113
+    team: hungry hippos
+    score: 460
+  - rank: 129
+    team: srossd
+    score: 370
+  - rank: 144
+    team: bunny
+    score: 330
+  - rank: 301
+    team: I Don't Have a Team Name
+    score: 70
+- name: EasyCTF 2015
+  startDate: 10/31/2015
+  endDate: 11/11/2015
+  link: https://easyctf.com/
+  tjParticipants:
+  - rank: 1
+    team: µ's
+    score: 14250
+  - rank: 2
+    team: not good at compute box
+    score: 14250
+  - rank: 9
+    team: Ryears
+    score: 12275
+  - rank: 10
+    team: sometaim i am cri
+    score: 11825
+  - rank: 60
+    team: The Men in Blackhats
+    score: 6530
+  - rank: 88
+    team: The Cones of Dunshire
+    score: 5325
+  - rank: 93
+    team: persona_non_grata
+    score: 5100
+  - rank: 112
+    team: sql_1nj3ct3D
+    score: 4595
+  - rank: 146
+    team: franklin_d_memes
+    score: 3830
+  - rank: 166
+    team: The Legend of The Rose
+    score: 3445
+  - rank: 175
+    team: Welcome to the Jam
+    score: 3230
+  - rank: 182
+    team: rlst
+    score: 3175
+  - rank: 218
+    team: DAMEJ
+    score: 2785
+  - rank: 265
+    team: ezpz
+    score: 2255
+  - rank: 403
+    team: Bunnycowsnoopyroo
+    score: 1220
+  - rank: 537
+    team: Just Another Team
+    score: 750
+  - rank: 555
+    team: EZCTF
+    score: 715
+- name: picoCTF 2014
+  startDate: 10/27/2014
+  endDate: 11/7/2014
+  link: https://picoctf.com/
+  tjParticipants:
+  - rank: 3
+    team: Raelly
+    score: 6105
+  - rank: 4
+    team: Shark Fins
+    score: 6015
+  - rank: 6
+    team: TJ CSL
+    score: 5705
+  - rank: 20
+    team: Cutie Mark Crusaders
+    score: 4775
+  - rank: 44
+    team: PCTFCP
+    score: 3585
+  - rank: 69
+    team: JAKEBAKE
+    score: 3225
+  - rank: 92
+    team: no weebs allowed
+    score: 3105
+  - rank: 109
+    team: pmRoom
+    score: 2765
+  - rank: 134
+    team: TJ DC
+    score: 2390
+  - rank: 140
+    team: '0x0000023'
+    score: 2325
+  - rank: 161
+    team: 1337 Hackers
+    score: 2180
+  - rank: 214
+    team: "#yolo"
+    score: 1830
+  - rank: 241
+    team: FirstThingsFirstYOLO
+    score: 1730
+  - rank: 243
+    team: Hello
+    score: 1730
+  - rank: 301
+    team: qwefisveryreliable
+    score: 1590
+  - rank: 452
+    team: ARC
+    score: 1220
+  - rank: 474
+    team: TJGators
+    score: 1180
+  - rank: 478
+    team: The Nerd Herd
+    score: 1170
+  - rank: 540
+    team: ATJ
+    score: 1040
+  - rank: 547
+    team: NimboNoobulus
+    score: 1030
+  - rank: 558
+    team: TeamCSC
+    score: 1010
+  - rank: 836
+    team: DGlazeIt
+    score: 730
+  - rank: 853
+    team: tjcsc
+    score: 720
+  - rank: 908
+    team: BitChip
+    score: 680
+  - rank: 935
+    team: silentAssassins
+    score: 660
+  - rank: 1055
+    team: NNN
+    score: 600
+  - rank: 1091
+    team: Leftovers
+    score: 570
+  - rank: 1141
+    team: We_JUST_STARTED_NOV6
+    score: 540
+  - rank: 1146
+    team: jcotton42
+    score: 530
+  - rank: 1208
+    team: OttSM
+    score: 500
+  - rank: 1246
+    team: weeaboo
+    score: 460
+  - rank: 1360
+    team: Team Won
+    score: 400
+  - rank: 1510
+    team: HackBusters
+    score: 320
+  - rank: 1635
+    team: Kappa
+    score: 280
+  - rank: 2266
+    team: WizKids
+    score: 150
+  - rank: 2421
+    team: '1383133'
+    score: 130
+  - rank: 2579
+    team: goodbyeworld
+    score: 100
+  - rank: 2915
+    team: Arcrascent
+    score: 50
+  - rank: 3056
+    team: Nandroid
+    score: 10
