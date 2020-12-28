@@ -12,7 +12,16 @@ export default {
       cursor: 'pointer',
       fontFamily: 'body',
       '&:hover': {
-        bg: 'secondary',
+        filter: 'brightness(0.9)',
+      },
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+      cursor: 'pointer',
+      fontFamily: 'body',
+      '&:hover': {
+        filter: 'brightness(0.9)',
       },
     },
   },

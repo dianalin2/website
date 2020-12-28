@@ -1,0 +1,21 @@
+- name: Darin Mao
+  avatar: ./avatars/darin.png
+  position: President
+- name: Saigautam Bonam
+  avatar: ./avatars/saigautam.jpg
+  position: Vice President
+- name: Autin Mitra
+  avatar: ./avatars/autin.jpg
+  position: Statistician
+- name: Andy Chen
+  avatar: ./avatars/andy.jpg
+  position: Lecturer
+- name: Johnny Pesavento
+  avatar: ./avatars/johnny.jpg
+  position: Lecturer
+- name: David Han
+  avatar: ./avatars/david.jpg
+  position: Lecturer
+- name: Luke Thistlethwaite
+  avatar: ./avatars/luke.png
+  position: Lecturer

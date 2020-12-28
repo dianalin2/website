@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Box, Styled, jsx } from 'theme-ui'
+import { Flex, Styled, jsx } from 'theme-ui'
 
 import Navbar from './navbar'
 import SEO from './seo'
@@ -9,9 +9,15 @@ const Layout = ({ children }) => {
     <Styled.root>
       <SEO />
       <Navbar />
-      <Box as='main'>
+      <Flex
+        as='main'
+        sx={{
+          flexDirection: 'column',
+          justifyContent: 'stretch',
+        }}
+      >
         {children}
-      </Box>
+      </Flex>
     </Styled.root>
   )
 }

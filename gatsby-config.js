@@ -4,15 +4,15 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-smoothscroll',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    `gatsby-transformer-yaml`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
