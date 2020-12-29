@@ -1,0 +1,36 @@
+name: PR Deploy Previews
+
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 15.x
+
+      - run: yarn install
+      - run: yarn build
+
+      - name: Deploy to Netlify
+        id: deploy-netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_PREVIEW_SITE_ID }}
+        with:
+          args: deploy --dir=public --prod
+
+      - name: Netlify URL
+        uses: ouzi-dev/commit-status-updater@master
+        with:
+          name: Deploy Preview
+          status: success
+          url: ${{ steps.deploy-netlify.outputs.NETLIFY_URL }}
