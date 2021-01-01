@@ -151,7 +151,7 @@ const Index = ({ data }) => {
           </Box>
         ))}
       </Grid>
-      <Container mt={4}>
+      <Container my={4}>
         <Heading as='h1' mb={4}>Officers</Heading>
         <Grid
           sx={{

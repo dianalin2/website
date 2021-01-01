@@ -57,6 +57,7 @@ export default {
   sizes: {
     navbar: '90px',
     container: '50rem',
+    footer: '72px',
   },
   styles: {
     root: {
