@@ -1,14 +1,14 @@
 - name: picoCTF Mini
-  startDate: 10/1/2020 16:00:00
-  endDate: 10/30/2020 19:00:00
+  startDate: '2020-10-01T16:00:00.000Z'
+  endDate: '2020-10-30T19:00:00.000Z'
   link: https://picoctf.org/competitions/2020-fall.html
 - name: CSAW RED
-  startDate: 9/18/2020 16:00:00
-  endDate: 9/27/2020 16:00:00
+  startDate: '2020-09-18T16:00:00.000Z'
+  endDate: '2020-09-27T16:00:00.000Z'
   link: https://red.csaw.io/
 - name: TJCTF 2020
-  startDate: 5/22/2020 11:00:00
-  endDate: 5/26/2020 11:00:00
+  startDate: '2020-05-22T11:00:00.000Z'
+  endDate: '2020-05-26T11:00:00.000Z'
   link: https://tjctf.org/
   tjParticipants:
   - rank: 26
@@ -30,8 +30,8 @@
     team: blockchain
     score: 435
 - name: ångstromCTF 2020
-  startDate: 3/14/2020 00:00:00
-  endDate: 3/19/2020 00:00:00
+  startDate: '2020-03-14T00:00:00.000Z'
+  endDate: '2020-03-19T00:00:00.000Z'
   link: https://2020.angstromctf.com/
   tjParticipants:
   - rank: 30
@@ -56,8 +56,8 @@
     team: crystalWorlds
     score: 60
 - name: RUSecureCTF 2020
-  startDate: 2/24/2020 12:00:00
-  endDate: 3/6/2020 12:00:00
+  startDate: '2020-02-24T12:00:00.000Z'
+  endDate: '2020-03-06T12:00:00.000Z'
   link: https://rusecurectf.radford.edu/
   tjParticipants:
   - rank: 9
@@ -79,20 +79,20 @@
     team: kryptonite
     score: 500
 - name: CSAW CTF Final Round 2019
-  startDate: 11/6/2019 19:00:00
-  endDate: 11/8/2019 14:00:00
+  startDate: '2019-11-06T19:00:00.000Z'
+  endDate: '2019-11-08T14:00:00.000Z'
   link: http://ctf.csaw.io/
 - name: Lockheed Martin CyberQuest 2019
-  startDate: 10/26/2019 11:30:00
-  endDate: 10/26/2019 2:30:00
+  startDate: '2019-10-26T11:30:00.000Z'
+  endDate: '2019-10-26T02:30:00.000Z'
   link: http://ctf.csaw.io/
   tjParticipants:
   - rank: 2
     team: tjcsc
     score: 400
 - name: picoCTF 2019
-  startDate: 9/27/2019 12:00:00
-  endDate: 10/11/2019 12:00:00
+  startDate: '2019-09-27T12:00:00.000Z'
+  endDate: '2019-10-11T12:00:00.000Z'
   link: https://2019game.picoctf.com/
   tjParticipants:
   - rank: 9
@@ -138,52 +138,52 @@
     team: bluehelium
     score: 100
 - name: CSAW CTF Qualification Round 2019
-  startDate: 9/13/2019 20:00:00
-  endDate: 9/15/2019 20:00:00
+  startDate: '2019-09-13T20:00:00.000Z'
+  endDate: '2019-09-15T20:00:00.000Z'
   link: http://ctf.csaw.io/
 - name: RedpwnCTF 2019
-  startDate: 8/12/2019 16:00:00
-  endDate: 8/16/2019 16:00:00
+  startDate: '2019-08-12T16:00:00.000Z'
+  endDate: '2019-08-16T16:00:00.000Z'
   link: https://redpwn.net/
   tjParticipants:
   - rank: 16
     team: tjcsc
     score: 6197
 - name: HSCTF 6
-  startDate: 6/3/2019 7:00:00
-  endDate: 6/7/2019 19:00:00
+  startDate: '2019-06-03T07:00:00.000Z'
+  endDate: '2019-06-07T19:00:00.000Z'
   link: https://hsctf.com/
 - name: Facebook CTF 2019
-  startDate: 6/1/2019 0:00:00
-  endDate: 6/3/2019 0:00:00
+  startDate: '2019-06-01T00:00:00.000Z'
+  endDate: '2019-06-03T00:00:00.000Z'
   link: http://www.fbctf.com/
 - name: ångstromCTF 2019
-  startDate: 4/20/2019 0:00:00
-  endDate: 4/25/2019 0:00:00
+  startDate: '2019-04-20T00:00:00.000Z'
+  endDate: '2019-04-25T00:00:00.000Z'
   link: https://2019.angstromctf.com/
 - name: TJCTF 2019
-  startDate: 4/5/2019 23:00:00
-  endDate: 4/9/2019 23:00:00
+  startDate: '2019-04-05T23:00:00.000Z'
+  endDate: '2019-04-09T23:00:00.000Z'
   link: https://tjctf.org/
 - name: TAMUctf 2019
-  startDate: 2/23/2019 0:00:00
-  endDate: 3/4/2019 0:00:00
+  startDate: '2019-02-23T00:00:00.000Z'
+  endDate: '2019-03-04T00:00:00.000Z'
   link: https://tamuctf.com/
 - name: MITRE STEM CTF 2019
-  startDate: 1/11/2019 14:00:00
-  endDate: 1/12/2019 14:00:00
+  startDate: '2019-01-11T14:00:00.000Z'
+  endDate: '2019-01-12T14:00:00.000Z'
   link: https://mitrestemctf.org/
 - name: Lockheed Martin CYBERQUEST
-  startDate: 10/20/2018 10:00:00
-  endDate: 10/20/2018 15:30:00
+  startDate: '2018-10-20T10:00:00.000Z'
+  endDate: '2018-10-20T15:30:00.000Z'
   link: https://www.lockheedmartin.com/en-us/who-we-are/communities/cyber-quest.html
   tjParticipants:
   - rank: 1
     team: tjcsc
     score: 435
 - name: picoCTF 2018
-  startDate: 9/28/2018 12:00:00
-  endDate: 10/12/2018 12:00:00
+  startDate: '2018-09-28T12:00:00.000Z'
+  endDate: '2018-10-12T12:00:00.000Z'
   link: https://picoctf.com/
   tjParticipants:
   - rank: 7
@@ -235,44 +235,44 @@
     team: zzx
     score: 200
 - name: CSAW Red Team Competition
-  startDate: 9/21/2018 16:00:00
-  endDate: 9/30/2018 16:00:00
+  startDate: '2018-09-21T16:00:00.000Z'
+  endDate: '2018-09-30T16:00:00.000Z'
   link: https://csaw.engineering.nyu.edu/RED
   tjParticipants:
   - rank: 4
     team: kelly
     score: 7335
 - name: TJCTF 2018
-  startDate: 8/6/2018 21:00:00
-  endDate: 8/12/2018 21:00:00
+  startDate: '2018-08-06T21:00:00.000Z'
+  endDate: '2018-08-12T21:00:00.000Z'
   link: https://tjctf.org/
 - name: HSCTF 2018
-  startDate: 5/19/2018
-  endDate: 5/26/2018
+  startDate: '2018-05-19T00:00:00.000Z'
+  endDate: '2018-05-26T00:00:00.000Z'
   link: https://hsctf.com/
   tjParticipants:
   - rank: 6
     team: tjcsc
     score: 7525
 - name: MITRE STEM CTF 2018
-  startDate: 4/20/2018 15:00:00
-  endDate: 4/21/2018 15:00:00
+  startDate: '2018-04-20T15:00:00.000Z'
+  endDate: '2018-04-21T15:00:00.000Z'
   link: http://mitrecyberacademy.org/competitions/
 - name: PACTF 2018
-  startDate: 4/16/2018
-  endDate: 4/30/2018
+  startDate: '2018-04-16T00:00:00.000Z'
+  endDate: '2018-04-30T00:00:00.000Z'
   link: https://2017.pactf.com/
 - name: RUSecure CTF 2018 Qualifying Round
-  startDate: 3/17/2018
-  endDate: 3/31/2018
+  startDate: '2018-03-17T00:00:00.000Z'
+  endDate: '2018-03-31T00:00:00.000Z'
   link: https://www.radford.edu/content/csat/home/itec/rusecure-ctf-contest.html
 - name: ångstromCTF 2018
-  startDate: 3/16/2018 20:00:00
-  endDate: 3/21/2018 20:00:00
+  startDate: '2018-03-16T20:00:00.000Z'
+  endDate: '2018-03-21T20:00:00.000Z'
   link: https://angstromctf.com/
 - name: EasyCTF 2018
-  startDate: 2/9/2018
-  endDate: 2/19/2018
+  startDate: '2018-02-09T00:00:00.000Z'
+  endDate: '2018-02-19T00:00:00.000Z'
   link: https://www.easyctf.com/
   tjParticipants:
   - rank: 3
@@ -348,12 +348,12 @@
     team: Coding Crew
     score: 10
 - name: RUSecure CTF 2017 Preliminary Round
-  startDate: 11/6/2017 9:00:00
-  endDate: 12/9/2017 12:00:00
+  startDate: '2017-11-06T09:00:00.000Z'
+  endDate: '2017-12-09T12:00:00.000Z'
   link: https://www.radford.edu/content/csat/home/itec/rusecure-ctf-contest.html
 - name: HSF 2017 Qualification Round
-  startDate: 9/22/2017
-  endDate: 10/2/2017
+  startDate: '2017-09-22T00:00:00.000Z'
+  endDate: '2017-10-02T00:00:00.000Z'
   link: https://csaw.engineering.nyu.edu/hsf
   tjParticipants:
   - rank: 6
@@ -399,16 +399,16 @@
     team: fjkafhfeefaw
     score: 16
 - name: CSAW 2017 Qualification Competition
-  startDate: 9/15/2017
-  endDate: 9/17/2017
+  startDate: '2017-09-15T00:00:00.000Z'
+  endDate: '2017-09-17T00:00:00.000Z'
   link: https://csaw.engineering.nyu.edu/ctf
 - name: MITRE STEM CTF 2017
-  startDate: 9/15/2017
-  endDate: 9/16/2017
+  startDate: '2017-09-15T00:00:00.000Z'
+  endDate: '2017-09-16T00:00:00.000Z'
   link: http://mitrecyberacademy.org/competitions/
 - name: HSCTF 2017
-  startDate: 5/20/2017
-  endDate: 5/27/2017
+  startDate: '2017-05-20T00:00:00.000Z'
+  endDate: '2017-05-27T00:00:00.000Z'
   link: https://hsctf.com/
   tjParticipants:
   - rank: 2
@@ -424,27 +424,27 @@
     team: Turner Burners
     score: 550
 - name: PACTF 2017
-  startDate: 4/16/2017
-  endDate: 4/30/2017
+  startDate: '2017-04-16T00:00:00.000Z'
+  endDate: '2017-04-30T00:00:00.000Z'
   link: https://2017.pactf.com/
 - name: ångstromCTF 2017
-  startDate: 4/22/2017
-  endDate: 4/29/2017
+  startDate: '2017-04-22T00:00:00.000Z'
+  endDate: '2017-04-29T00:00:00.000Z'
   link: https://angstromctf.com/
 - name: picoCTF 2017
-  startDate: 3/31/2017
-  endDate: 4/14/2017
+  startDate: '2017-03-31T00:00:00.000Z'
+  endDate: '2017-04-14T00:00:00.000Z'
   link: https://2017.picoctf.com/
 - name: RUSecure CTF 2017 Qualifying Round
-  startDate: 3/18/2017
-  endDate: 4/1/2017
+  startDate: '2017-03-18T00:00:00.000Z'
+  endDate: '2017-04-01T00:00:00.000Z'
   link: https://www.radford.edu/content/csat/home/itec/rusecure-ctf-contest.html
   tjParticipants:
   - rank: 1
     team: hungry hippos
 - name: EasyCTF 2017
-  startDate: 3/13/2017
-  endDate: 3/20/2017
+  startDate: '2017-03-13T00:00:00.000Z'
+  endDate: '2017-03-20T00:00:00.000Z'
   link: https://easyctf.com/
   tjParticipants:
   - rank: 3
@@ -499,12 +499,12 @@
     team: uh what's a good name
     score: 10
 - name: School CTF 2016
-  startDate: 11/6/2016 1:00:00
-  endDate: 11/6/2016 9:00:00
+  startDate: '2016-11-06T01:00:00.000Z'
+  endDate: '2016-11-06T09:00:00.000Z'
   link: https://school-ctf.org
 - name: RUSecure CTF 2016 Preliminary Round
-  startDate: 10/29/2016
-  endDate: 11/12/2016
+  startDate: '2016-10-29T00:00:00.000Z'
+  endDate: '2016-11-12T00:00:00.000Z'
   link: https://www.radford.edu/content/csat/home/itec/rusecure-ctf-contest.html
   tjParticipants:
   - rank: 1
@@ -517,8 +517,8 @@
     team: jffknight
     score: 72967
 - name: CSAW HSF Quals 2016
-  startDate: 9/28/2016
-  endDate: 10/8/2016
+  startDate: '2016-09-28T00:00:00.000Z'
+  endDate: '2016-10-08T00:00:00.000Z'
   link: https://csaw.engineering.nyu.edu/hsf
   tjParticipants:
   - rank: 4
@@ -555,16 +555,16 @@
     team: JellyMellon
     score: 75
 - name: MITRE STEM CTF 2016
-  startDate: 9/16/2016
-  endDate: 9/17/2016
+  startDate: '2016-09-16T00:00:00.000Z'
+  endDate: '2016-09-17T00:00:00.000Z'
   link: http://mitrecyberacademy.org/competitions/
   tjParticipants:
   - rank: 13
     team: The Flying Penguins
     score: 510
 - name: ABCTF 2016
-  startDate: 7/15/2016
-  endDate: 7/22/2016
+  startDate: '2016-07-15T00:00:00.000Z'
+  endDate: '2016-07-22T00:00:00.000Z'
   link: http://abctf.xyz
   tjParticipants:
   - rank: 1
@@ -592,24 +592,24 @@
     team: bunny
     score: 20
 - name: TJCTF 2016
-  startDate: 5/27/2016
-  endDate: 5/30/2016
+  startDate: '2016-05-27T00:00:00.000Z'
+  endDate: '2016-05-30T00:00:00.000Z'
   link: https://tjctf.org/
 - name: PACTF 2016
-  startDate: 4/10/2016
-  endDate: 5/1/2016
+  startDate: '2016-04-10T00:00:00.000Z'
+  endDate: '2016-05-01T00:00:00.000Z'
   link: https://www.pactf.com/
   tjParticipants:
   - rank: 12
     team: TJ CSL
     score: 1871
 - name: sCTF 2016 Q1
-  startDate: 4/8/2016
-  endDate: 4/15/2016
+  startDate: '2016-04-08T00:00:00.000Z'
+  endDate: '2016-04-15T00:00:00.000Z'
   link: https://compete.sctf.io/2016q1/
 - name: CamsCTF 2016
-  startDate: 3/20/2016
-  endDate: 3/27/2016
+  startDate: '2016-03-20T00:00:00.000Z'
+  endDate: '2016-03-27T00:00:00.000Z'
   link: http://camsctf.com/
   tjParticipants:
   - rank: 1
@@ -637,8 +637,8 @@
     team: I Don't Have a Team Name
     score: 70
 - name: EasyCTF 2015
-  startDate: 10/31/2015
-  endDate: 11/11/2015
+  startDate: '2015-10-31T00:00:00.000Z'
+  endDate: '2015-11-11T00:00:00.000Z'
   link: https://easyctf.com/
   tjParticipants:
   - rank: 1
@@ -693,8 +693,8 @@
     team: EZCTF
     score: 715
 - name: picoCTF 2014
-  startDate: 10/27/2014
-  endDate: 11/7/2014
+  startDate: '2014-10-27T00:00:00.000Z'
+  endDate: '2014-11-07T00:00:00.000Z'
   link: https://picoctf.com/
   tjParticipants:
   - rank: 3

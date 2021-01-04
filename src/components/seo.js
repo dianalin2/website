@@ -3,25 +3,38 @@ import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
 import { useStaticQuery, graphql, withPrefix, } from 'gatsby'
 
-const SEO = (props) => {
+const SEO = ({ title, description, ...props }) => {
   const { pathname } = useLocation()
   const {
     site: {
       siteMetadata: {
-        title,
-        description,
+        title: defaultTitle,
+        titleTemplate,
+        description: defaultDescription,
         url,
       },
     },
   } = useStaticQuery(query)
 
+  const data = {
+    url: url + pathname,
+    title: title ?? defaultTitle,
+    description: description ?? defaultDescription,
+  }
+
+  const helmet = {
+    title: data.title,
+  }
+  if (title)
+    helmet.titleTemplate = titleTemplate
+
   return (
-    <Helmet title={title} {...props}>
-      <meta name='description' content={description} />
+    <Helmet {...helmet} {...props}>
+      <meta name='description' content={data.description} />
       <meta property='og:type' content='website' />
-      <meta property='og:url' content={url + pathname} />
+      <meta property='og:url' content={data.url} />
       <meta property='og:title' content={title} />
-      <meta property='og:description' content={description} />
+      <meta property='og:description' content={data.description} />
       <meta property='og:image' content={withPrefix('/meta.png')} />
       <link rel='icon' type='image/x-icon' href={withPrefix('/favicon.ico')} />
     </Helmet>
@@ -36,6 +49,7 @@ const query = graphql`
       siteMetadata {
         description
         title
+        titleTemplate
         url
       }
     }

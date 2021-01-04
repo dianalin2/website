@@ -2,7 +2,7 @@
 import { IoFlagSharp, IoLogoDiscord, IoLogoFacebook } from 'react-icons/io5'
 import { Box, Grid, IconButton, jsx } from 'theme-ui'
 
-const FooterIcon = ({Icon, href, ...props}) => (
+const FooterIcon = ({Icon, href, title, ...props}) => (
   <IconButton
     {...props}
     as='a'
@@ -10,7 +10,7 @@ const FooterIcon = ({Icon, href, ...props}) => (
     target='_blank'
     rel='nofollow noopener noreferrer'
   >
-    <Icon />
+    <Icon title={title} />
   </IconButton>
 )
 
@@ -19,7 +19,7 @@ const Footer = (props) => (
     {...props}
     sx={{
       bg: 'lightBackground',
-      height: 72,
+      height: 'footer',
       display: 'flex',
       alignItems: 'center',
       px: ['2rem', '3rem', '4rem'],
@@ -32,9 +32,9 @@ const Footer = (props) => (
         ml: 'auto',
       }}
     >
-      <FooterIcon href='https://www.facebook.com/groups/tjcsc' Icon={IoLogoFacebook} />
-      <FooterIcon href='https://ctf.tjcsec.club/' Icon={IoFlagSharp} />
-      <FooterIcon href='https://tjcsec.club/discord' Icon={IoLogoDiscord} />
+      <FooterIcon href='https://www.facebook.com/groups/tjcsc' Icon={IoLogoFacebook} title='TJCSC Facebook' />
+      <FooterIcon href='https://ctf.tjcsec.club/' Icon={IoFlagSharp} title='TJCSC CTF' />
+      <FooterIcon href='https://tjcsec.club/discord' Icon={IoLogoDiscord} title='TJCSC Discord' />
     </Grid>
   </Box>
 )

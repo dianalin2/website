@@ -1,6 +1,8 @@
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/700.css'
 
+import { prismColors } from './prism'
+
 export default {
   breakpoints: [
     '40em', '56em', '64em',
@@ -32,7 +34,7 @@ export default {
     secondary: '#AED1FE',
     accent: '#D67C78',
     highlight: '#FFDB78',
-    muted: '#eeeeee',
+    gray: '#CCCCCC',
     altBackground: '#0B1117',
     lightBackground: '#192128',
     navbar: '#000000',
@@ -55,9 +57,10 @@ export default {
     heading: 1.125,
   },
   sizes: {
-    navbar: '90px',
-    container: '50rem',
-    footer: '72px',
+    navbar: 90,
+    container: 2000,
+    writeup: 1000,
+    footer: 72,
   },
   styles: {
     root: {
@@ -67,10 +70,16 @@ export default {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'stretch',
-      scrollBehavior: 'smooth',
     },
     a: {
       color: 'text',
+      wordBreak: 'break-word',
+      '&:hover': {
+        filter: 'brightness(0.9)',
+      },
+    },
+    code: {
+      ...prismColors
     },
   }
 }

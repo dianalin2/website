@@ -5,6 +5,7 @@ import Headroom from 'react-headroom'
 import Hamburger from 'react-hamburger-menu'
 import { graphql, useStaticQuery } from 'gatsby'
 
+import Container from './container'
 import Link from './link'
 
 const NavLink = ({ children, ...props }) => (
@@ -58,10 +59,7 @@ const Navbar = () => {
         zIndex: 999,
         '& > .headroom': {
           height: 'navbar',
-          py: '2rem',
-          px: ['2rem', '3rem', '4rem'],
-          display: 'flex',
-          justifyContent: 'space-between',
+          py: '1rem',
           transition: '0.2s linear',
           backgroundColor: isOpen ? 'navbar' : 'transparent',
           '&::before': {
@@ -94,53 +92,60 @@ const Navbar = () => {
         },
       }}
     >
-      <NavLink to='/' sx={{ fontWeight: 'bold' }}>{title}</NavLink>
-      <Hamburger
-        isOpen={isOpen}
-        menuClicked={useCallback(() => {setIsOpen(open => !open)}, [])}
-        width={18}
-        height={15}
-        strokeWidth={2}
-        animationDuration={0.2}
-        color='#ffffff'
+      <Container
         sx={{
-          display: ['block', null, 'none'],
-          cursor: 'pointer',
-        }}
-      />
-      <Flex
-        sx={{
-          '@media (max-width: 56em)': {
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            position: 'absolute',
-            left: 0,
-            top: '100%',
-            width: '100%',
-            backgroundColor: 'navbar',
-            p: '2rem',
-            pt: 0,
-            opacity: isOpen ? 1 : 0,
-            visibility: isOpen ? 'visible' : 'hidden',
-            transition: '0.2s linear',
-          },
+          display: 'flex',
+          justifyContent: 'space-between',
         }}
       >
-        {menuLinks.map(({ name, link }, i) => (
-          <NavLink
-            key={i}
-            to={link}
-            activeClassName='active'
-            partiallyActive={true}
-            sx={{
-              ml: [0, null, '2rem'],
-              p: ['0.5rem', null, 0],
-            }}
-          >
-            {name}
-          </NavLink>
-        ))}
-      </Flex>
+        <NavLink to='/' sx={{ fontWeight: 'bold' }}>{title}</NavLink>
+        <Hamburger
+          isOpen={isOpen}
+          menuClicked={useCallback(() => {setIsOpen(open => !open)}, [])}
+          width={18}
+          height={15}
+          strokeWidth={2}
+          animationDuration={0.2}
+          color='#ffffff'
+          sx={{
+            display: ['block', null, 'none'],
+            cursor: 'pointer',
+          }}
+        />
+        <Flex
+          sx={{
+            '@media (max-width: 56em)': {
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              position: 'absolute',
+              left: 0,
+              top: '100%',
+              width: '100%',
+              backgroundColor: 'navbar',
+              p: '2rem',
+              pt: 0,
+              opacity: isOpen ? 1 : 0,
+              visibility: isOpen ? 'visible' : 'hidden',
+              transition: '0.2s linear',
+            },
+          }}
+        >
+          {menuLinks.map(({ name, link }, i) => (
+            <NavLink
+              key={i}
+              to={link}
+              activeClassName='active'
+              partiallyActive={true}
+              sx={{
+                ml: [0, null, '2rem'],
+                p: ['0.5rem', null, 0],
+              }}
+            >
+              {name}
+            </NavLink>
+          ))}
+        </Flex>
+      </Container>
     </Headroom>
   )
 }

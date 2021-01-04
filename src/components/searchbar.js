@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { Box, Input, jsx } from 'theme-ui'
-import { IoSearchSharp } from 'react-icons/io5';
+import { IoSearchSharp } from 'react-icons/io5'
 
 const SearchBar = ({ onChange, value, type, text, placeholder, name, ...props }) => (
   <Box

@@ -1,72 +1,78 @@
 /** @jsx jsx */
-import { useState } from 'react'
-import { Box, Heading, Text, jsx, Button, Flex } from 'theme-ui'
-import ScoreBoard from './scoreboard';
+import { Box, Heading, Link, Text, Button, jsx } from 'theme-ui'
+import { useCallback, useState } from 'react'
+import { motion } from 'framer-motion'
 
+import ScoreBoard from './scoreboard'
+import {cardAnimateProps} from '../animations/animations'
 
 const CTFCard = ({ name, link, startDate, endDate, tjParticipants, ...props }) => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false)
+  const [isHoveringOverButtons, setisHoveringOverButtons] = useState(false)
+
+  const open = useCallback((e) => {
+    e.preventDefault()
+    setModalOpen(true)
+  }, [])
+  const close = useCallback(() => {setModalOpen(false)}, [])
 
   return (
-    <Flex
-      {...props}
+    <Link
+      href={link}
       sx={{
-        bg: 'lightBackground',
-        borderRadius: 4,
-        padding: 4,
-        alignItems: 'stretch',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        '& > *': {
-          flex: '0 1 auto',
-        }
+        textDecoration: 'none',
+        display: 'flex',
       }}
+      target='blank'
+      rel='nofollow noopener noreferrer'
     >
-      <Box>
-        <Heading
-          as='h1'
-          sx={{
-            fontSize: [3, 4, 5],
-          }}
-        >
-          {name}
-        </Heading>
-        <Text
-          sx={{
-            fontSize: 1,
-            marginTop: 2,
-            color: 'primary',
-          }}
-        >
-          {`${startDate} - ${endDate}`}
-        </Text>
-      </Box>
-      <Flex
+      <motion.div
+        {...cardAnimateProps(isHoveringOverButtons)}
+        {...props}
         sx={{
-          flexDirection: ['column', null, 'row'],
-          mt: 3,
+          flex: 'auto',
+          display: 'flex',
+          bg: 'lightBackground',
+          borderRadius: 4,
+          padding: 4,
+          alignItems: 'stretch',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          cursor: 'pointer',
         }}
       >
-        <Button
-          as='a'
-          href={link}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Go
-        </Button>
+        <Box>
+          <Heading
+            as='h1'
+            sx={{
+              fontSize: [3, 4, 5],
+            }}
+          >
+            {name}
+          </Heading>
+          <Text
+            sx={{
+              fontSize: 1,
+              marginTop: 2,
+              color: 'primary',
+            }}
+          >
+            {`${startDate} - ${endDate}`}
+          </Text>
+        </Box>
         {tjParticipants && <Button
-          onClick={() => {setModalOpen(true)}}
+          onClick={open}
+          onMouseEnter={() => {setisHoveringOverButtons(true)}}
+          onMouseLeave={() => {setisHoveringOverButtons(false)}}
           sx={{
-            mt: [2, null, 0],
-            ml: [0, null, 2],
+            mt: 4,
           }}
         >
           TJ Participants
         </Button>}
-      </Flex>
-      <ScoreBoard isOpen={modalOpen} scores={tjParticipants} onClose={() => {setModalOpen(false)}}/>
-    </Flex>
+        <ScoreBoard isOpen={modalOpen} scores={tjParticipants} onClose={close}/>
+      </motion.div>
+    </Link>
   )
 }
 
