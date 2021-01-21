@@ -45,7 +45,7 @@
   body: An outline of various attacks on RSA
   level: 2
   link: https://docs.google.com/presentation/d/1-6uLOp_8zf8APhJVNJXAEgux48jebDvdB2i5W1jq208/edit?usp=sharing
-- title: Stenography
+- title: Steganography
   date: 2021-01-06
   body: How to hide & retrieve messages in various file types.
   level: 2
