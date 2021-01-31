@@ -35,6 +35,11 @@
   body: JWTs, and how to exploit them
   level: 2
   link: https://docs.google.com/presentation/d/1Hg5PvnGQnwCdFXkksPU3t4fWBYEVvwvAL124lyHG90k/edit?usp=sharing/
+- title: File Forensics
+  date: 2020-11-18
+  body: Extracting information from files
+  level: 2
+  link: https://docs.google.com/presentation/d/1vfHorYGHDOxCFEBdY5q5uT1Qv5MH2fi9DiFYej5MBaA/edit#slide=id.p
 - title: Introduction to RSA
   date: 2020-12-02
   body: An introduction to the RSA cryptosystem
