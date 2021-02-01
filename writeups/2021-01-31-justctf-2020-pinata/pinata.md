@@ -167,9 +167,9 @@ Disassembling at offsets +7 and +9 from the first instruction above produces the
 - offset 5 should pop three values
 - offset 6 should pop two values
 - offset 7 should pop two values
-- offset 8 should pop 1 value
-- offset 9 should pop 1 value
-- offset 10 should pop 0 values
+- offset 8 should pop one value
+- offset 9 should pop one value
+- offset 10 should pop no values
 
 This gives the following code:
 
@@ -211,7 +211,7 @@ The csu gadget was at our leaked return `+0x232`. This address +7 and +9 gives u
 Now that we have the ability to control the first two function arguments, we want to look for the PLT so we can call some functions. The PLT is typically at the beginning of the binary's memory, and since the nginx binary is so big, we must be a bit smarter with how we search.
 
 - The PLT is typically at the start of a page aligned to `0x1000`, and the first entry is usually at offset `0x30`. Thus, we can search for only addresses ending in `0x030` and decrement by `0x1000` every time (instead of 1).
-- PLT entries are `0x10` apart, so if we find the PLT, then every address a multiple of `0x10` after it should also be a function (though with the arguments we control some functions may segfault and crash, so not every entry is guaranteed).
+- PLT entries are `0x10` apart, so if we find the PLT, then every address a multiple of `0x10` after it should also be a function (though with the arguments we control some functions may segfault and crash, so not every entry is guaranteed to work).
 - We can pull another nginx binary out of a docker image to estimate the distance between the csu gadget and the start of the PLT.
 
 This last observation proved to be the most helpful. In the binary I pulled, `__libc_csu_init` was `0xcc310` after the first PLT entry, or `0xcc340` after the start of the page containing the PLT. After much searching, kmh found the address `0xc2d00` before the leaked return address (`0xc2f32` before the csu gadget) was most likely the page containing the PLT.
@@ -236,7 +236,7 @@ At this point we do not know which file descriptor corresponds to the output we 
 We can start at fd 3, because fd 0, 1, and 2 are typically stdin, stdout, and stderr, respectively. This turns out to be the correct number. The paper describes situations where we must guess higher numbers, but thankfully the challenge author did not do this to us.
 
 ## Making Arbitrary Syscalls
-The paper recommends that we find the address of `strcmp` in order to set `rdx`. However, this process is tricky and very guessy. We also need to control even more arguments later, which would be a big pain. To get around this, we will use a technique called Sigreturn-Oriented Programming. This technique only requires that we control the syscall number, and it allows us to set `every` register, including `rip`! You can read more about this technique [here](https://amriunix.com/post/sigreturn-oriented-programming-srop/).
+The paper recommends that we find the address of `strcmp` in order to set `rdx`. However, this process is tricky and very guessy. We also need to control even more arguments later, which would be a big pain. To get around this, we will use a technique called Sigreturn-Oriented Programming. This technique only requires that we control the syscall number, and it allows us to set _every_ register, including `rip`! You can read more about this technique [here](https://amriunix.com/post/sigreturn-oriented-programming-srop/).
 
 ## Writing the Binary
 We know that the first bytes of a binary are always `b'\x7fELF'`. We can use this fact to find the start of the binary in memory with trial and error. We use SROP to make a `write` syscall, and check to see if the beginning of the output is what we expect. We have a general sense of where this should be by inspecting our nginx binary. The start turns out to be `0x2b000` lower than the start of the PLT.
@@ -271,12 +271,12 @@ def leak_bin():
 There's a limit to how much nginx can send back in one request, so we just throw the whole thing in a big loop to dump as much as we can. The choice of `0x128000` is arbitrary.
 
 # Use Leaked Binary to Complete Exploit
-At this point we have enough information to complete the exploit. The dumped binary is incomplete, so most tools have a hard time/refuse to analyze it. Thankfully, we can still look for gadgets with some guess and check and feeding bytes into a disassembler by hand. We had a general sense for where the code segment should be from our nginx binary, and looked for some basic gadgets. In the end, we found two that were enough:
+At this point we have enough information to complete the exploit. The dumped binary is incomplete, so most tools have a hard time/refuse to analyze it. Thankfully, we can still look for gadgets with some guess-and-check and feeding bytes into a disassembler by hand. We had a general sense for where the code segment should be from our nginx binary, and looked for some basic gadgets. In the end, we found two that were enough:
 
 - `0x97232: pop rax ; ret`
 - `0x9f158: mov QWORD PTR [rsi], rax ; mov rax, rdx; ret`
 
-The second gadget is particularly powerful. Not only does it allow us to write data to memory, but it also allows us to write the return value of a function in `rax` to memory, which turns out to be very helpful.
+The second gadget is particularly powerful. Not only does it allow us to write data to memory, but it also allows us to write the return value of a function in `rax` to memory, which turned out to be very helpful.
 
 ## kmh's Solution
 kmh's solution came as a result of us asking where the flag should be (file, environment, memory, etc.) An admin told us that the flag was in the file `/flag.txt`, and that this path would be added to the challenge description. kmh's solution was to `open` this file, then use `sendfile` to send it to our socket.
