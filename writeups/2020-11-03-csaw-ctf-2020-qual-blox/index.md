@@ -3,6 +3,7 @@ title: CSAW CTF 2020 Qualifier - blox (rev/pwn)
 date: 2020-11-03
 slug: /writeups/csaw-ctf-2020-qual-blox
 excerpt: This was a two-part series from the 2020 CSAW CTF Qualifier involving a small Tetris-like game.
+author: Darin Mao
 ---
 
 This was a two-part series from the 2020 CSAW CTF Qualifier involving a small Tetris-like game. <!-- end -->I mostly did the second part, though will touch on some of the first as well. I will also go through the process of developing a solution that is doable with no scripting and only a keyboard.

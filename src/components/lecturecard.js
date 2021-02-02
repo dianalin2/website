@@ -3,7 +3,7 @@ import { Heading, Progress, Link, Text, jsx } from 'theme-ui'
 import { motion } from 'framer-motion'
 
 import { cardAnimateProps } from '../animations/animations'
-
+import datefmt from '../utils/datefmt'
 
 const difficulty = {
   1: {
@@ -66,7 +66,7 @@ const LectureCard = ({ body, date, level, title, link, ...props }) => {
             color: color,
           }}
         >
-          {date}
+          {datefmt(date)}
         </Text>
         <Text
           sx={{

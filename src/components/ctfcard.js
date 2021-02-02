@@ -4,7 +4,8 @@ import { useCallback, useState } from 'react'
 import { motion } from 'framer-motion'
 
 import ScoreBoard from './scoreboard'
-import {cardAnimateProps} from '../animations/animations'
+import { cardAnimateProps } from '../animations/animations'
+import datefmt from '../utils/datefmt'
 
 const CTFCard = ({ name, link, startDate, endDate, tjParticipants, ...props }) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -57,7 +58,7 @@ const CTFCard = ({ name, link, startDate, endDate, tjParticipants, ...props }) =
               color: 'primary',
             }}
           >
-            {`${startDate} - ${endDate}`}
+            {`${datefmt(startDate)} — ${datefmt(endDate)}`}
           </Text>
         </Box>
         {tjParticipants && <Button

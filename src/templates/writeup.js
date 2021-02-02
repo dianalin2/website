@@ -11,12 +11,14 @@ import Hero from '../components/hero'
 import Container from '../components/container'
 import TableOfContents from '../components/toc'
 import { prismArrangement } from '../gatsby-plugin-theme-ui/prism'
+import datefmt from '../utils/datefmt'
 
 const Writeup = ({ data: { mdx: post } }) => {
   const {
     frontmatter: {
       title,
       date,
+      author,
     },
     excerpt,
     body,
@@ -132,7 +134,7 @@ const Writeup = ({ data: { mdx: post } }) => {
               },
             }}
           >
-            <Hero title={title} subtitle={'Published on ' + date}
+            <Hero title={title} subtitle={`by ${author} on ${datefmt(date)}`}
               sx={{ maxWidth: 'writeup' }}
             />
             <Container
@@ -160,6 +162,7 @@ export const query = graphql`
       frontmatter {
         date(formatString: "YYYY-MM-DD")
         title
+        author
       }
       excerpt
       body

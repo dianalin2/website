@@ -3,6 +3,7 @@ title: CSAW RED 2020 Qualifier (web)
 date: 2020-09-29
 slug: /writeups/csaw-red-2020-qual-web
 excerpt: Solutions for web challenges from the CSAW RED 2020 Qualification Round.
+author: Darin Mao
 ---
 
 Solutions for web challenges from the CSAW RED 2020 Qualification Round.

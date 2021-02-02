@@ -115,7 +115,7 @@ export default Presentations
 
 export const query = graphql`
   query Lectures {
-    allLecturesYaml(sort: {fields: date, order: ASC}) {
+    allLecturesYaml(sort: {fields: date, order: DESC}) {
       nodes {
         title
         level

@@ -3,6 +3,7 @@ title: CSAW RED 2020 Qualifier (pwn)
 date: 2020-09-29
 slug: /writeups/csaw-red-2020-qual-pwn
 excerpt: Solutions for pwn challenges from the CSAW RED 2020 Qualification Round.
+author: Darin Mao
 ---
 
 Solutions for pwn challenges from the CSAW RED 2020 Qualification Round.

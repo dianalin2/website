@@ -3,6 +3,7 @@ title: DamCTF 2020 - guess (pwn)
 date: 2020-10-12
 slug: /writeups/damctf-2020-guess
 excerpt: This is my writeup for the challenge "guess" in the pwn category from OSUSEC's DamCTF 2020.
+author: Darin Mao
 ---
 
 This is my writeup for the challenge `guess` in the pwn category from OSUSEC's DamCTF 2020.

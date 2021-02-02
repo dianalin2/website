@@ -3,6 +3,7 @@ title: CSAW RED 2020 Qualifier (misc)
 date: 2020-09-29
 slug: /writeups/csaw-red-2020-qual-misc
 excerpt: Solutions for misc challenges from the CSAW RED 2020 Qualification Round.
+author: Darin Mao
 ---
 
 Solutions for misc challenges from the CSAW RED 2020 Qualification Round.

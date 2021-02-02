@@ -3,6 +3,7 @@ title: TJCSC Winter Contest 2020
 date: 2020-12-16
 slug: /writeups/tjcsc-winter-2020
 excerpt: Solutions to selected problems from the 2020 Winter Contest
+author: Darin Mao, Saigautam Bonam, and Autin Mitra
 ---
 
 Solutions to selected problems from the 2020 Winter Contest <!-- end -->

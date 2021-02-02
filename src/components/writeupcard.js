@@ -4,8 +4,9 @@ import { motion } from 'framer-motion'
 
 import Link from './link'
 import { cardAnimateProps } from '../animations/animations'
+import datefmt from '../utils/datefmt'
 
-const WriteupCard = ({ frontmatter, excerpt, timeToRead, ...props }) => {
+const WriteupCard = ({ frontmatter, excerpt, timeToRead, author, ...props }) => {
   return (
     <Link
       to={frontmatter.slug}
@@ -32,6 +33,15 @@ const WriteupCard = ({ frontmatter, excerpt, timeToRead, ...props }) => {
           }
         }}
       >
+        <Text
+          sx={{
+            fontSize: 1,
+            mb: 2,
+            color: 'primary',
+          }}
+        >
+          {frontmatter.author}
+        </Text>
         <Heading
           as='h1'
           sx={{
@@ -43,11 +53,11 @@ const WriteupCard = ({ frontmatter, excerpt, timeToRead, ...props }) => {
         <Text
           sx={{
             fontSize: 1,
-            marginTop: 2,
+            mt: 2,
             color: 'primary',
           }}
         >
-          {frontmatter.date} — {timeToRead} minute read
+          {datefmt(frontmatter.date)} — {timeToRead} minute read
         </Text>
         <Text
           sx={{

@@ -3,6 +3,7 @@ title: NACTF 2020
 date: 2020-11-04
 slug: /writeups/nactf-2020
 excerpt: Required writeups for winning teams.
+author: Darin Mao and Stephen Huan
 ---
 
 Required writeups for winning teams. <!-- end -->

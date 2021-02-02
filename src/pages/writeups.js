@@ -59,6 +59,7 @@ export const query = graphql`
           date(formatString: "YYYY-MM-DD")
           slug
           title
+          author
         }
         excerpt(pruneLength: 250)
         rawBody
