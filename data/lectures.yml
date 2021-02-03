@@ -65,3 +65,8 @@
   body: "Assembly Stack & Syscalls"
   level: 3
   link: https://docs.google.com/presentation/d/1H-9dpnkOFxZPS-zKyJFu2hfAUiBlC-6e1xAu0cGMvg8/edit?usp=sharing
+- title: Cheat Engine
+  date: 2021-02-03
+  body: "Using the Cheat Engine tool for modifying memory of processes."
+  level: 3
+  link: https://docs.google.com/presentation/d/1JkbK7zSofkgI_YolHTKZzRK_fQB7HnaJaaWgdLHnYv8/edit?usp=sharing
