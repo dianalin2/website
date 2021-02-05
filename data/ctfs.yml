@@ -1,3 +1,14 @@
+- name: picoCTF 2021
+  startDate: '2021-03-16T16:00:00.000Z'
+  endDate: '2021-03-30T16:00:00.000Z'
+  link: https://picoctf.org/
+- name: RUSecure CTF Qualifying Round
+  startDate: '2021-03-01T00:00:00.000Z'
+  endDate: '2021-03-26T00:00:00.000Z'
+- name: DiceCTF
+  startDate: '2021-02-06T00:00:00.000Z'
+  endDate: '2021-02-08T00:00:00.000Z'
+  link: https://ctf.dicega.ng/
 - name: picoCTF Mini
   startDate: '2020-10-01T16:00:00.000Z'
   endDate: '2020-10-30T19:00:00.000Z'
