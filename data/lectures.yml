@@ -52,12 +52,12 @@
   link: https://docs.google.com/presentation/d/1-6uLOp_8zf8APhJVNJXAEgux48jebDvdB2i5W1jq208/edit?usp=sharing
 - title: Steganography
   date: 2021-01-06
-  body: How to hide & retrieve messages in various file types.
+  body: How to hide & retrieve messages in various file types
   level: 2
   link: https://docs.google.com/presentation/d/1gEsSJsKV0UeYSUGuzOujY7JrBYTsouxESecaij-LOlQ/edit?usp=sharing
 - title: Assembly 1
   date: 2021-01-21
-  body: Basic ASM, how it works, and how to read it.
+  body: Basic ASM, how it works, and how to read it
   level: 2
   link: https://docs.google.com/presentation/d/1tPVLK1rmjc0YzT5F0Fmj4O47ivN_Djq1zrnxkzyngSc/edit?usp=sharing
 - title: Assembly 2
@@ -67,6 +67,11 @@
   link: https://docs.google.com/presentation/d/1H-9dpnkOFxZPS-zKyJFu2hfAUiBlC-6e1xAu0cGMvg8/edit?usp=sharing
 - title: Cheat Engine
   date: 2021-02-03
-  body: "Using the Cheat Engine tool for modifying memory of processes."
+  body: Using the Cheat Engine tool for modifying memory of processes
   level: 3
   link: https://docs.google.com/presentation/d/1JkbK7zSofkgI_YolHTKZzRK_fQB7HnaJaaWgdLHnYv8/edit?usp=sharing
+- title: Wireshark
+  date: 2021-02-10
+  body: Using wireshark to analyze network traffic
+  level: 3
+  link: https://docs.google.com/presentation/d/1qY1EdiADh-iblG-TAlfxtH_tZCNN7XXmP24_Bccu1nw/edit?usp=sharing
