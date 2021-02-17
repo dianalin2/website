@@ -75,3 +75,8 @@
   body: Using wireshark to analyze network traffic
   level: 3
   link: https://docs.google.com/presentation/d/1qY1EdiADh-iblG-TAlfxtH_tZCNN7XXmP24_Bccu1nw/edit?usp=sharing
+- title: Audio Forensics 
+  date: 2021-02-17
+  body: "Encoding and decoding information in audio files."
+  level: 2
+  link: https://docs.google.com/presentation/d/1IQTIZSZ4htZQRroNa06q8Hsy3jZEJ8URxlNjjgStsko
