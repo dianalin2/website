@@ -80,3 +80,8 @@
   body: "Encoding and decoding information in audio files."
   level: 3
   link: https://docs.google.com/presentation/d/1IQTIZSZ4htZQRroNa06q8Hsy3jZEJ8URxlNjjgStsko
+- title: "Stream/Block Ciphers"
+  date: 2021-02-24
+  body: "How stream & block ciphers work, and how to exploit them."
+  level: 3
+  link: https://docs.google.com/presentation/d/1KsB1_rjkdLw7rtmpE8WOXtcV96yJI7sEyNA5Z-rMhWs/edit#slide=id.gc0532c6dc7_0_140
