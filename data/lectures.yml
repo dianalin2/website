@@ -90,3 +90,9 @@
   body: "Diffie Hellman key exchange, how it works, and different attacks."
   level: 3
   link: https://docs.google.com/presentation/d/1aESOhKuW-wA2Ha8qUsquT8LMScWGyRjxxk1O-ItYYTg/edit?usp=sharing
+- title: "Cross Site Scripting (XSS)"
+  date: 2021-03-10
+  body: "How to exploit websites with XSS, and get around CSP."
+  level: 3
+  link: https://docs.google.com/presentation/d/1gDw6iTGRshX9tNgPlCtDbx6H8RtIWZnfodVlA0pdAt8/edit?usp=sharing
+  
