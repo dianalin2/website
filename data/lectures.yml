@@ -95,4 +95,9 @@
   body: "How to exploit websites with XSS, and get around CSP."
   level: 3
   link: https://docs.google.com/presentation/d/1gDw6iTGRshX9tNgPlCtDbx6H8RtIWZnfodVlA0pdAt8/edit?usp=sharing
+- title: "Volatility and Memory Forensics"
+  date: 2021-03-17
+  body: "Using Volatility for memory foresnics."
+  level: 3
+  link: https://docs.google.com/presentation/d/1KGD-OWXH-do1ux_7kX6RNy3qII1OlAd_2AaL_wnQOio/edit?usp=sharing
   
