@@ -100,4 +100,9 @@
   body: "Using Volatility for memory foresnics."
   level: 3
   link: https://docs.google.com/presentation/d/1KGD-OWXH-do1ux_7kX6RNy3qII1OlAd_2AaL_wnQOio/edit?usp=sharing
+- title: "PHP"
+  date: 2021-03-24
+  body: "An overview to PHP, and different methods of exploitation."
+  level: 3
+  link: https://docs.google.com/presentation/d/1FJCNRSEMD8wQpHy1M_Vuvg4FNxpG09pI8FU9zJOV9oc/edit?usp=sharing
   
