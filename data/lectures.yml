@@ -75,7 +75,7 @@
   body: Using wireshark to analyze network traffic
   level: 3
   link: https://docs.google.com/presentation/d/1qY1EdiADh-iblG-TAlfxtH_tZCNN7XXmP24_Bccu1nw/edit?usp=sharing
-- title: Audio Forensics 
+- title: Audio Forensics
   date: 2021-02-17
   body: "Encoding and decoding information in audio files."
   level: 3
@@ -97,7 +97,7 @@
   link: https://docs.google.com/presentation/d/1gDw6iTGRshX9tNgPlCtDbx6H8RtIWZnfodVlA0pdAt8/edit?usp=sharing
 - title: "Volatility and Memory Forensics"
   date: 2021-03-17
-  body: "Using Volatility for memory foresnics."
+  body: "Using Volatility for memory forensics."
   level: 3
   link: https://docs.google.com/presentation/d/1KGD-OWXH-do1ux_7kX6RNy3qII1OlAd_2AaL_wnQOio/edit?usp=sharing
 - title: "PHP"
@@ -105,4 +105,3 @@
   body: "An overview to PHP, and different methods of exploitation."
   level: 3
   link: https://docs.google.com/presentation/d/1FJCNRSEMD8wQpHy1M_Vuvg4FNxpG09pI8FU9zJOV9oc/edit?usp=sharing
-  
