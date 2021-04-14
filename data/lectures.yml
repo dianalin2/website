@@ -105,3 +105,8 @@
   body: "An overview to PHP, and different methods of exploitation."
   level: 3
   link: https://docs.google.com/presentation/d/1FJCNRSEMD8wQpHy1M_Vuvg4FNxpG09pI8FU9zJOV9oc/edit?usp=sharing
+- title: "Buffer Overflow"
+  date: 2021-04-14
+  body: "An introduction to binexp with buffer overflows."
+  level: 3
+  link: https://docs.google.com/presentation/d/1brHxQ5n7kAWLtbi1coIoX1-pGmICOviB-UWGWflSI4A/edit?usp=sharing
