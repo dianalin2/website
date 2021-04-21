@@ -110,3 +110,8 @@
   body: "An introduction to binexp with buffer overflows."
   level: 3
   link: https://docs.google.com/presentation/d/1brHxQ5n7kAWLtbi1coIoX1-pGmICOviB-UWGWflSI4A/edit?usp=sharing
+- title: "ROP Gadgets"
+  date: 2021-04-21
+  body: "Using Return-Oriented Programming (ROP) for binary exploitation."
+  level: 3
+  link: https://docs.google.com/presentation/d/1xbiGaDJfcAXR_f9Yh40avC3lOlmAx2Gmpxe_KDW-3do/edit?usp=sharing
