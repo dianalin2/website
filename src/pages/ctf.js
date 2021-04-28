@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import {  Button, Flex, Grid, jsx } from 'theme-ui'
+import { Button, Flex, Grid, jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -16,9 +16,7 @@ const fuseOptions = {
 
 const CTFs = ({ data }) => {
   const {
-    allCtfsYaml: {
-      nodes: ctfs,
-    }
+    allCtfsYaml: { nodes: ctfs },
   } = data
 
   return (
@@ -49,7 +47,7 @@ const CTFs = ({ data }) => {
               TJCSC Practice CTF
             </Button>
           </Flex>
-          <CardGrid items={ctfs} Card={CTFCard} fuseOptions={fuseOptions}/>
+          <CardGrid items={ctfs} Card={CTFCard} fuseOptions={fuseOptions} />
         </Grid>
       </Container>
     </Layout>
@@ -60,7 +58,7 @@ export default CTFs
 
 export const query = graphql`
   query CTFs {
-    allCtfsYaml(sort: {fields: startDate, order: DESC}) {
+    allCtfsYaml(sort: { fields: startDate, order: DESC }) {
       nodes {
         name
         startDate(formatString: "YYYY-MM-DD")

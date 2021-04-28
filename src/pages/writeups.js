@@ -12,10 +12,10 @@ const fuseOptions = {
   keys: [
     {
       name: 'frontmatter.title',
-      weight: 2
+      weight: 2,
     },
     'excerpt',
-    'rawBody'
+    'rawBody',
   ],
   minMatchCharLength: 3,
   ignoreLocation: true,
@@ -24,14 +24,13 @@ const fuseOptions = {
 
 const Writeups = ({ data }) => {
   const {
-    allMdx: {
-      nodes: writeups,
-    },
+    allMdx: { nodes: writeups },
   } = data
 
   return (
     <Layout seo={{ title: 'Writeups' }}>
-      <Hero title='Writeups'
+      <Hero
+        title='Writeups'
         subtitle='A collection of some writeups written by TJCSC'
       />
       <Container>
@@ -42,7 +41,11 @@ const Writeups = ({ data }) => {
             mb: 4,
           }}
         >
-          <CardGrid items={writeups} Card={WriteupCard} fuseOptions={fuseOptions}/>
+          <CardGrid
+            items={writeups}
+            Card={WriteupCard}
+            fuseOptions={fuseOptions}
+          />
         </Grid>
       </Container>
     </Layout>
@@ -53,7 +56,7 @@ export default Writeups
 
 export const query = graphql`
   query Writeups {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {
           date(formatString: "YYYY-MM-DD")

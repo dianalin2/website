@@ -2,7 +2,7 @@
 import { IoFlagSharp, IoLogoDiscord, IoLogoFacebook } from 'react-icons/io5'
 import { Box, Grid, IconButton, jsx } from 'theme-ui'
 
-const FooterIcon = ({Icon, href, title, ...props}) => (
+const FooterIcon = ({ Icon, href, title, ...props }) => (
   <IconButton
     {...props}
     as='a'
@@ -32,9 +32,21 @@ const Footer = (props) => (
         ml: 'auto',
       }}
     >
-      <FooterIcon href='https://www.facebook.com/groups/tjcsc' Icon={IoLogoFacebook} title='TJCSC Facebook' />
-      <FooterIcon href='https://ctf.tjcsec.club/' Icon={IoFlagSharp} title='TJCSC CTF' />
-      <FooterIcon href='https://tjcsec.club/discord' Icon={IoLogoDiscord} title='TJCSC Discord' />
+      <FooterIcon
+        href='https://www.facebook.com/groups/tjcsc'
+        Icon={IoLogoFacebook}
+        title='TJCSC Facebook'
+      />
+      <FooterIcon
+        href='https://ctf.tjcsec.club/'
+        Icon={IoFlagSharp}
+        title='TJCSC CTF'
+      />
+      <FooterIcon
+        href='https://tjcsec.club/discord'
+        Icon={IoLogoDiscord}
+        title='TJCSC Discord'
+      />
     </Grid>
   </Box>
 )

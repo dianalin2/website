@@ -4,9 +4,7 @@ import '@fontsource/inter/700.css'
 import { prismColors } from './prism'
 
 export default {
-  breakpoints: [
-    '40em', '56em', '64em',
-  ],
+  breakpoints: ['40em', '56em', '64em'],
   buttons: {
     primary: {
       color: 'background',
@@ -44,9 +42,7 @@ export default {
     heading: 'Inter, system-ui, sans-serif',
     monospace: 'Menlo, monospace',
   },
-  fontSizes: [
-    12, 14, 16, 20, 24, 32, 48, 64,
-  ],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -79,7 +75,7 @@ export default {
       },
     },
     code: {
-      ...prismColors
+      ...prismColors,
     },
-  }
+  },
 }

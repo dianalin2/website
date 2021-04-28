@@ -10,8 +10,8 @@ const Layout = ({ seo, children, ...props }) => {
   return (
     <Styled.root {...props}>
       <Global
-        styles={theme => ({
-          'body': {
+        styles={(theme) => ({
+          body: {
             '&, *': {
               scrollbarColor: `${theme.colors.primary} ${theme.colors.navbar}`,
               scrollbarWidth: 'thin',
@@ -23,19 +23,23 @@ const Layout = ({ seo, children, ...props }) => {
               '::-webkit-scrollbar-thumb': {
                 background: theme.colors.primary,
               },
-            }
+            },
           },
         })}
       />
       <SEO {...seo} />
       <Navbar />
-      <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <Flex
           as='main'
           sx={{
             flexDirection: 'column',
             justifyContent: 'stretch',
-            minHeight: theme => `calc(100vh - ${theme.sizes.footer}px)`
+            minHeight: (theme) => `calc(100vh - ${theme.sizes.footer}px)`,
           }}
         >
           {children}

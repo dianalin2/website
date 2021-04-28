@@ -14,26 +14,16 @@ import CircuitBoard from '../images/circuit-board.svg'
 const Index = ({ data }) => {
   const {
     site: {
-      siteMetadata: {
-        description,
-      },
+      siteMetadata: { description },
     },
     hero: {
-      childImageSharp: {
-        fluid: hero,
-      },
+      childImageSharp: { fluid: hero },
     },
     club: {
-      childImageSharp: {
-        fluid: club,
-      },
+      childImageSharp: { fluid: club },
     },
-    allAboutYaml: {
-      edges: about,
-    },
-    allOfficersYaml: {
-      edges: officers,
-    },
+    allAboutYaml: { edges: about },
+    allOfficersYaml: { edges: officers },
   } = data
 
   const scrollAbout = useCallback(() => {
@@ -53,12 +43,12 @@ const Index = ({ data }) => {
           minHeight: '100vh',
           '& > *': {
             flex: '1',
-            pt: theme => theme.sizes.navbar,
+            pt: (theme) => theme.sizes.navbar,
             pb: '0.5rem',
             '& > *': {
-              maxWidth: theme => `calc(${theme.sizes.container}px / 2)`,
+              maxWidth: (theme) => `calc(${theme.sizes.container}px / 2)`,
               px: ['2rem', '3rem', '4rem'],
-            }
+            },
           },
         }}
       >
@@ -109,7 +99,9 @@ const Index = ({ data }) => {
           }}
         >
           <Box>
-            <Img fluid={hero} alt='TJCSC at Lockheed Martin CYBERQUEST 2019'
+            <Img
+              fluid={hero}
+              alt='TJCSC at Lockheed Martin CYBERQUEST 2019'
               sx={{
                 borderRadius: 4,
                 mb: 1,
@@ -119,7 +111,8 @@ const Index = ({ data }) => {
           </Box>
         </Flex>
       </Flex>
-      <Flex id='about'
+      <Flex
+        id='about'
         sx={{
           bg: 'altBackground',
           '& > *': {
@@ -144,7 +137,9 @@ const Index = ({ data }) => {
             The Club
           </Heading>
         </Flex>
-        <Img fluid={{ ...club, aspectRatio: 1.778 }} alt='TJ Computer Security Club Meeting, October 2016'
+        <Img
+          fluid={{ ...club, aspectRatio: 1.778 }}
+          alt='TJ Computer Security Club Meeting, October 2016'
           sx={{
             display: ['none', null, 'block'],
           }}
@@ -157,13 +152,12 @@ const Index = ({ data }) => {
         }}
       >
         <Container>
-          <Grid
-            columns={[1, null, 3]}
-            gap={5}
-          >
+          <Grid columns={[1, null, 3]} gap={5}>
             {about.map(({ node: { title, text } }, i) => (
               <Box key={i}>
-                <Heading as='h2' mb={2}>{title}</Heading>
+                <Heading as='h2' mb={2}>
+                  {title}
+                </Heading>
                 <Text>{text}</Text>
               </Box>
             ))}
@@ -171,17 +165,16 @@ const Index = ({ data }) => {
         </Container>
       </Box>
       <Container my={4}>
-        <Heading as='h1' mb={4}>Officers</Heading>
+        <Heading as='h1' mb={4}>
+          Officers
+        </Heading>
         <Grid
           sx={{
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
           }}
         >
           {officers.map(({ node }, i) => (
-            <OfficerCard
-              key={i}
-              data={node}
-            />
+            <OfficerCard key={i} data={node} />
           ))}
         </Grid>
       </Container>
@@ -198,14 +191,14 @@ export const query = graphql`
         description
       }
     }
-    hero: file(relativePath: {eq: "cyberquest.png"}) {
+    hero: file(relativePath: { eq: "cyberquest.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    club: file(relativePath: {eq: "evan.png"}) {
+    club: file(relativePath: { eq: "evan.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

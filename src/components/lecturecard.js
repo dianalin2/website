@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Heading, Progress, Link, Text, jsx } from 'theme-ui'
+import { Heading, Progress, Link, Text, Box, jsx } from 'theme-ui'
 import { motion } from 'framer-motion'
 
 import { cardAnimateProps } from '../animations/animations'
@@ -20,7 +20,15 @@ const difficulty = {
   },
 }
 
-const LectureCard = ({ body, date, level, title, link, ...props }) => {
+const LectureCard = ({
+  body,
+  date,
+  level,
+  title,
+  link,
+  guest = false,
+  ...props
+}) => {
   const { color, display } = difficulty[level]
 
   return (
@@ -48,7 +56,7 @@ const LectureCard = ({ body, date, level, title, link, ...props }) => {
           cursor: 'pointer',
           '& > *': {
             flex: '0 1 auto',
-          }
+          },
         }}
       >
         <Heading
@@ -95,6 +103,21 @@ const LectureCard = ({ body, date, level, title, link, ...props }) => {
         >
           {display}
         </Text>
+        {guest && (
+          <Box
+            sx={{
+              fontSize: 1,
+              mt: 3,
+              mr: 'auto',
+              bg: 'rgba(255, 255, 255, 0.2)',
+              p: 2,
+              color: 'text',
+              fontWeight: 'bold',
+            }}
+          >
+            Guest
+          </Box>
+        )}
       </motion.div>
     </Link>
   )

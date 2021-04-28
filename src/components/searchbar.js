@@ -2,11 +2,19 @@
 import { Box, Input, jsx } from 'theme-ui'
 import { IoSearchSharp } from 'react-icons/io5'
 
-const SearchBar = ({ onChange, value, type, text, placeholder, name, ...props }) => (
+const SearchBar = ({
+  onChange,
+  value,
+  type,
+  text,
+  placeholder,
+  name,
+  ...props
+}) => (
   <Box
     {...props}
     sx={{
-      position: 'relative'
+      position: 'relative',
     }}
   >
     <IoSearchSharp
@@ -18,7 +26,7 @@ const SearchBar = ({ onChange, value, type, text, placeholder, name, ...props })
         top: 0,
         left: 0,
         right: 0,
-        bottom: 0
+        bottom: 0,
       }}
     />
 
@@ -33,9 +41,7 @@ const SearchBar = ({ onChange, value, type, text, placeholder, name, ...props })
         paddingLeft: '3rem',
         fontFamily: 'body',
       }}
-    >
-
-    </Input>
+    ></Input>
   </Box>
 )
 

@@ -15,27 +15,21 @@ import datefmt from '../utils/datefmt'
 
 const Writeup = ({ data: { mdx: post } }) => {
   const {
-    frontmatter: {
-      title,
-      date,
-      author,
-    },
+    frontmatter: { title, date, author },
     excerpt,
     body,
-    tableOfContents: {
-      items: toc,
-    },
+    tableOfContents: { items: toc },
   } = post
 
   const [tocOpen, setTocOpen] = useState(false)
 
   return (
-    <Layout seo={{ title, description: excerpt }} >
-      <Global
-        styles={theme => (prismArrangement(theme))}
-      />
+    <Layout seo={{ title, description: excerpt }}>
+      <Global styles={(theme) => prismArrangement(theme)} />
       <IconButton
-        onClick={useCallback(() => {setTocOpen(open => !open)}, [])}
+        onClick={useCallback(() => {
+          setTocOpen((open) => !open)
+        }, [])}
         aria-label='Table of Contents'
         sx={{
           display: ['block', null, 'none'],
@@ -60,9 +54,10 @@ const Writeup = ({ data: { mdx: post } }) => {
               borderRadius: [0, null, 5],
               overflow: 'hidden',
               position: 'sticky',
-              top: theme => `calc(${theme.sizes.navbar}px + 1rem)`,
+              top: (theme) => `calc(${theme.sizes.navbar}px + 1rem)`,
               // lmfao
-              maxHeight: theme => `calc(100vh - 2 * ${theme.sizes.navbar}px - 2rem)`,
+              maxHeight: (theme) =>
+                `calc(100vh - 2 * ${theme.sizes.navbar}px - 2rem)`,
               '& ul': {
                 m: 0,
                 listStyle: 'none',
@@ -98,7 +93,9 @@ const Writeup = ({ data: { mdx: post } }) => {
               }}
             >
               <Close
-                onClick={useCallback(() => {setTocOpen(false)}, [])}
+                onClick={useCallback(() => {
+                  setTocOpen(false)
+                }, [])}
                 sx={{
                   cursor: 'pointer',
                   mr: 'auto',
@@ -106,11 +103,12 @@ const Writeup = ({ data: { mdx: post } }) => {
                   display: ['inline-flex', null, 'none'],
                 }}
               />
-              <Heading as='h1'
+              <Heading
+                as='h1'
                 sx={{
                   fontSize: 4,
                   my: 'auto',
-                  mr: 'auto'
+                  mr: 'auto',
                 }}
               >
                 Table of Contents
@@ -130,18 +128,20 @@ const Writeup = ({ data: { mdx: post } }) => {
               m: 'auto',
               pl: [0, null, 5],
               '& > *': {
-                px: '0 !important'
+                px: '0 !important',
               },
             }}
           >
-            <Hero title={title} subtitle={`by ${author} on ${datefmt(date)}`}
+            <Hero
+              title={title}
+              subtitle={`by ${author} on ${datefmt(date)}`}
               sx={{ maxWidth: 'writeup' }}
             />
             <Container
               sx={{
                 maxWidth: 'writeup',
                 '& a.anchor': {
-                  fill: theme => theme.colors.text,
+                  fill: (theme) => theme.colors.text,
                 },
               }}
             >
@@ -157,7 +157,7 @@ const Writeup = ({ data: { mdx: post } }) => {
 export default Writeup
 
 export const query = graphql`
-  query Writeup ($path: String!) {
+  query Writeup($path: String!) {
     mdx(frontmatter: { slug: { eq: $path } }) {
       frontmatter {
         date(formatString: "YYYY-MM-DD")

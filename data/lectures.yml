@@ -1,6 +1,7 @@
 - title: Introduction
   date: 2020-09-30
-  body: Brief introduction of the club, including an overview of topics and Capture
+  body:
+    Brief introduction of the club, including an overview of topics and Capture
     the Flag competitions
   level: 1
   link: https://docs.google.com/presentation/d/1dVgI2fHgNCztCMbeCd8bsH60u9Ac6CsUAkBMGjGYnEE/
@@ -16,7 +17,8 @@
   link: https://docs.google.com/presentation/d/1sNxt6Rg_o0coigQEQCnIvYIZmLcvAuq7x7dbyDg_LDk
 - title: Crypto Intro
   date: 2020-10-21
-  body: An introduction to number systems (binary, hex, etc.) & basic cryptography
+  body:
+    An introduction to number systems (binary, hex, etc.) & basic cryptography
     (XOR, Cipher, Hashing)
   level: 1
   link: https://docs.google.com/presentation/d/1AskKJuBeFw9kN7jHPFTSC9f-lNDDeVE9PzowUPUk7gg/
@@ -62,7 +64,7 @@
   link: https://docs.google.com/presentation/d/1tPVLK1rmjc0YzT5F0Fmj4O47ivN_Djq1zrnxkzyngSc/edit?usp=sharing
 - title: Assembly 2
   date: 2021-01-27
-  body: "Assembly Stack & Syscalls"
+  body: 'Assembly Stack & Syscalls'
   level: 3
   link: https://docs.google.com/presentation/d/1H-9dpnkOFxZPS-zKyJFu2hfAUiBlC-6e1xAu0cGMvg8/edit?usp=sharing
 - title: Cheat Engine
@@ -77,41 +79,52 @@
   link: https://docs.google.com/presentation/d/1qY1EdiADh-iblG-TAlfxtH_tZCNN7XXmP24_Bccu1nw/edit?usp=sharing
 - title: Audio Forensics
   date: 2021-02-17
-  body: "Encoding and decoding information in audio files."
+  body: 'Encoding and decoding information in audio files.'
   level: 3
   link: https://docs.google.com/presentation/d/1IQTIZSZ4htZQRroNa06q8Hsy3jZEJ8URxlNjjgStsko
-- title: "Stream/Block Ciphers"
+- title: 'Stream/Block Ciphers'
   date: 2021-02-24
-  body: "How stream & block ciphers work, and how to exploit them."
+  body: 'How stream & block ciphers work, and how to exploit them.'
   level: 3
   link: https://docs.google.com/presentation/d/1KsB1_rjkdLw7rtmpE8WOXtcV96yJI7sEyNA5Z-rMhWs/edit#slide=id.gc0532c6dc7_0_140
-- title: "Diffie Hellman"
+- title: 'Diffie Hellman'
   date: 2021-03-03
-  body: "Diffie Hellman key exchange, how it works, and different attacks."
+  body: 'Diffie Hellman key exchange, how it works, and different attacks.'
   level: 3
   link: https://docs.google.com/presentation/d/1aESOhKuW-wA2Ha8qUsquT8LMScWGyRjxxk1O-ItYYTg/edit?usp=sharing
-- title: "Cross Site Scripting (XSS)"
+- title: 'Cross Site Scripting (XSS)'
   date: 2021-03-10
-  body: "How to exploit websites with XSS, and get around CSP."
+  body: 'How to exploit websites with XSS, and get around CSP.'
   level: 3
   link: https://docs.google.com/presentation/d/1gDw6iTGRshX9tNgPlCtDbx6H8RtIWZnfodVlA0pdAt8/edit?usp=sharing
-- title: "Volatility and Memory Forensics"
+- title: 'Volatility and Memory Forensics'
   date: 2021-03-17
-  body: "Using Volatility for memory forensics."
+  body: 'Using Volatility for memory forensics.'
   level: 3
   link: https://docs.google.com/presentation/d/1KGD-OWXH-do1ux_7kX6RNy3qII1OlAd_2AaL_wnQOio/edit?usp=sharing
-- title: "PHP"
+- title: 'PHP'
   date: 2021-03-24
-  body: "An overview to PHP, and different methods of exploitation."
+  body: 'An overview to PHP, and different methods of exploitation.'
   level: 3
   link: https://docs.google.com/presentation/d/1FJCNRSEMD8wQpHy1M_Vuvg4FNxpG09pI8FU9zJOV9oc/edit?usp=sharing
-- title: "Buffer Overflow"
+- title: 'Buffer Overflow'
   date: 2021-04-14
-  body: "An introduction to binexp with buffer overflows."
+  body: 'An introduction to binexp with buffer overflows.'
   level: 3
   link: https://docs.google.com/presentation/d/1brHxQ5n7kAWLtbi1coIoX1-pGmICOviB-UWGWflSI4A/edit?usp=sharing
-- title: "ROP Gadgets"
+- title: 'ROP Gadgets'
   date: 2021-04-21
-  body: "Using Return-Oriented Programming (ROP) for binary exploitation."
+  body: 'Using Return-Oriented Programming (ROP) for binary exploitation.'
   level: 3
   link: https://docs.google.com/presentation/d/1xbiGaDJfcAXR_f9Yh40avC3lOlmAx2Gmpxe_KDW-3do/edit?usp=sharing
+- title: 'Android Reversing'
+  date: 2021-04-28
+  body: 'Using ApkTool and Android Studio for reversing'
+  level: 2
+  guest: true
+  link: https://docs.google.com/presentation/d/1n8DXlib7iyUY9b-I6kAK3bYi114yj0MVym6uQKvr8K8/edit?usp=sharing
+- title: 'Format String'
+  date: 2021-04-28
+  body: 'Format String attacks in binary exploitation.'
+  level: 3
+  link: https://docs.google.com/presentation/d/1Ll1a0DThPTc-Lhvpadumc6jzR6tXQ0vj51iehY4jKv4/edit?usp=sharing

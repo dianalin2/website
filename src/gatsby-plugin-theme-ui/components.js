@@ -4,27 +4,26 @@ import { Link, Image, jsx } from 'theme-ui'
 import { Link as AnchorLink } from 'react-scroll'
 
 const MdLink = ({ href, children, external, ...props }) => {
-  return (
-    href[0] === '#' ? (
-      <AnchorLink
-        href={href}
-        to={href.substring(1)}
-        smooth={true}
-        duration={400}
-        hashSpy={true}
-        {...props}
-      >
-        {children}
-      </AnchorLink>
-    ) : (
-      <Link
-        href={href}
-        target='_blank' rel='nofollow noopener noreferrer'
-        {...props}
-      >
-        {children}
-      </Link>
-    )
+  return href[0] === '#' ? (
+    <AnchorLink
+      href={href}
+      to={href.substring(1)}
+      smooth={true}
+      duration={400}
+      hashSpy={true}
+      {...props}
+    >
+      {children}
+    </AnchorLink>
+  ) : (
+    <Link
+      href={href}
+      target='_blank'
+      rel='nofollow noopener noreferrer'
+      {...props}
+    >
+      {children}
+    </Link>
   )
 }
 
@@ -43,9 +42,8 @@ const Blockquote = ({ children, ...props }) => (
   </blockquote>
 )
 
-
 export default {
-  pre: props => props.children,
+  pre: (props) => props.children,
   a: MdLink,
   blockquote: Blockquote,
   img: Image,

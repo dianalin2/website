@@ -9,24 +9,21 @@ import LectureCard from '../components/lecturecard'
 import CardGrid from '../components/cardgrid'
 
 const fuseOptions = {
-  keys: [{name: 'title', weight: 2}, 'body'],
+  keys: [{ name: 'title', weight: 2 }, 'body'],
   threshold: 0.4,
   minMatchCharLength: 3,
 }
 
 const Presentations = ({ data }) => {
   const {
-    allLecturesYaml: {
-      nodes: lectures,
-    },
-    allLectureFoldersYaml: {
-      nodes: lectureFolders,
-    },
+    allLecturesYaml: { nodes: lectures },
+    allLectureFoldersYaml: { nodes: lectureFolders },
   } = data
 
   return (
     <Layout seo={{ title: 'Presentations' }}>
-      <Hero title='Presentations'
+      <Hero
+        title='Presentations'
         subtitle='We give weekly presentations on a variety of interesting topics.'
       />
       <Container>
@@ -34,7 +31,7 @@ const Presentations = ({ data }) => {
           gap={4}
           sx={{
             justifyItems: 'stretch',
-            mb: 4
+            mb: 4,
           }}
         >
           <Flex
@@ -52,7 +49,7 @@ const Presentations = ({ data }) => {
               target='_blank'
               rel='nofollow noopener noreferrer'
             >
-                Presentations ({lectureFolders[0].label})
+              Presentations ({lectureFolders[0].label})
             </Button>
             <Box sx={{ position: 'relative' }}>
               <Button
@@ -92,7 +89,7 @@ const Presentations = ({ data }) => {
                       py: 2,
                       '&:hover, &:focus': {
                         bg: 'secondary',
-                      }
+                      },
                     }}
                     href={folder.link}
                     target='_blank'
@@ -104,7 +101,11 @@ const Presentations = ({ data }) => {
               </Box>
             </Box>
           </Flex>
-          <CardGrid items={lectures} Card={LectureCard} fuseOptions={fuseOptions}/>
+          <CardGrid
+            items={lectures}
+            Card={LectureCard}
+            fuseOptions={fuseOptions}
+          />
         </Grid>
       </Container>
     </Layout>
@@ -115,16 +116,17 @@ export default Presentations
 
 export const query = graphql`
   query Lectures {
-    allLecturesYaml(sort: {fields: date, order: DESC}) {
+    allLecturesYaml(sort: { fields: date, order: DESC }) {
       nodes {
         title
         level
         date(formatString: "YYYY-MM-DD")
         body
         link
+        guest
       }
     }
-    allLectureFoldersYaml(sort: {fields: label, order: DESC}) {
+    allLectureFoldersYaml(sort: { fields: label, order: DESC }) {
       nodes {
         link
         label

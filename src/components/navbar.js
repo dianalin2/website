@@ -34,17 +34,16 @@ const NavLink = ({ children, ...props }) => (
         bg: 'primary',
       },
     }}
-  >{children}</Link>
+  >
+    {children}
+  </Link>
 )
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const {
     site: {
-      siteMetadata: {
-        title,
-        menuLinks,
-      },
+      siteMetadata: { title, menuLinks },
     },
   } = useStaticQuery(query)
 
@@ -98,10 +97,14 @@ const Navbar = () => {
           justifyContent: 'space-between',
         }}
       >
-        <NavLink to='/' sx={{ fontWeight: 'bold' }}>{title}</NavLink>
+        <NavLink to='/' sx={{ fontWeight: 'bold' }}>
+          {title}
+        </NavLink>
         <Hamburger
           isOpen={isOpen}
-          menuClicked={useCallback(() => {setIsOpen(open => !open)}, [])}
+          menuClicked={useCallback(() => {
+            setIsOpen((open) => !open)
+          }, [])}
           width={18}
           height={15}
           strokeWidth={2}

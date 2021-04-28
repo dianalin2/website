@@ -9,9 +9,7 @@ const OfficerCard = ({ data, ...props }) => {
     name,
     position,
     avatar: {
-      childImageSharp: {
-        fluid: avatar,
-      },
+      childImageSharp: { fluid: avatar },
     },
   } = data
   return (

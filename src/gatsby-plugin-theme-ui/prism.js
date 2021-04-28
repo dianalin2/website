@@ -31,10 +31,10 @@ const prismColors = {
   },
   '.inserted': {
     color: 'green',
-  }
+  },
 }
 
-const prismArrangement = theme => ({
+const prismArrangement = (theme) => ({
   'code[class*="language-"], pre[class*="language-"]': {
     color: '#e8e8e8',
     fontSize: '1em',
@@ -53,7 +53,7 @@ const prismArrangement = theme => ({
     overflow: 'auto',
   },
   ':not(pre) > code[class*="language-"], pre[class*="language-"]': {
-	  backgroundColor: theme.colors.lightBackground
+    backgroundColor: theme.colors.lightBackground,
   },
   ':not(pre) > code[class*="language-"]': {
     padding: '.1em',
@@ -63,11 +63,8 @@ const prismArrangement = theme => ({
     overflow: 'auto',
     backgroundColor: theme.colors.lightBackground,
     padding: '1rem',
-    borderRadius: '0.2rem'
+    borderRadius: '0.2rem',
   },
 })
 
-export {
-  prismColors,
-  prismArrangement
-}
+export { prismColors, prismArrangement }

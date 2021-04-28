@@ -19,7 +19,7 @@ const TableOfContents = ({ items: baseItems, root = true, ...props }) => {
           >
             {title}
           </Link>
-          {items && <TableOfContents items={items} root={false}/>}
+          {items && <TableOfContents items={items} root={false} />}
         </li>
       ))}
     </ul>

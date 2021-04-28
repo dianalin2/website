@@ -7,7 +7,14 @@ import ScoreBoard from './scoreboard'
 import { cardAnimateProps } from '../animations/animations'
 import datefmt from '../utils/datefmt'
 
-const CTFCard = ({ name, link, startDate, endDate, tjParticipants, ...props }) => {
+const CTFCard = ({
+  name,
+  link,
+  startDate,
+  endDate,
+  tjParticipants,
+  ...props
+}) => {
   const [modalOpen, setModalOpen] = useState(false)
   const [isHoveringOverButtons, setisHoveringOverButtons] = useState(false)
 
@@ -15,7 +22,9 @@ const CTFCard = ({ name, link, startDate, endDate, tjParticipants, ...props }) =
     e.preventDefault()
     setModalOpen(true)
   }, [])
-  const close = useCallback(() => {setModalOpen(false)}, [])
+  const close = useCallback(() => {
+    setModalOpen(false)
+  }, [])
 
   return (
     <Link
@@ -61,17 +70,27 @@ const CTFCard = ({ name, link, startDate, endDate, tjParticipants, ...props }) =
             {`${datefmt(startDate)} — ${datefmt(endDate)}`}
           </Text>
         </Box>
-        {tjParticipants && <Button
-          onClick={open}
-          onMouseEnter={() => {setisHoveringOverButtons(true)}}
-          onMouseLeave={() => {setisHoveringOverButtons(false)}}
-          sx={{
-            mt: 4,
-          }}
-        >
-          TJ Participants
-        </Button>}
-        <ScoreBoard isOpen={modalOpen} scores={tjParticipants} onClose={close}/>
+        {tjParticipants && (
+          <Button
+            onClick={open}
+            onMouseEnter={() => {
+              setisHoveringOverButtons(true)
+            }}
+            onMouseLeave={() => {
+              setisHoveringOverButtons(false)
+            }}
+            sx={{
+              mt: 4,
+            }}
+          >
+            TJ Participants
+          </Button>
+        )}
+        <ScoreBoard
+          isOpen={modalOpen}
+          scores={tjParticipants}
+          onClose={close}
+        />
       </motion.div>
     </Link>
   )

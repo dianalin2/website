@@ -15,7 +15,7 @@ const columns = [
   {
     header: 'Score',
     accessor: 'score',
-  }
+  },
 ]
 
 const Table = ({ columns, data, ...props }) => {
@@ -31,7 +31,7 @@ const Table = ({ columns, data, ...props }) => {
       <tbody>
         <tr
           sx={{
-            borderBottom: '3px solid #ffffff20'
+            borderBottom: '3px solid #ffffff20',
           }}
         >
           {columns.map((column, i) => (
@@ -66,7 +66,7 @@ const Table = ({ columns, data, ...props }) => {
                   sx={{
                     mt: 2,
                     mb: 2,
-                    mr: 3
+                    mr: 3,
                   }}
                 >
                   {obj[columnItem.accessor]}
@@ -82,7 +82,7 @@ const Table = ({ columns, data, ...props }) => {
 
 Modal.setAppElement('#___gatsby')
 
-const ScoreBoard = ({scores, onClose, ...props}) => (
+const ScoreBoard = ({ scores, onClose, ...props }) => (
   <Modal
     {...props}
     className='modal-content'
@@ -91,7 +91,7 @@ const ScoreBoard = ({scores, onClose, ...props}) => (
     closeTimeoutMS={125}
   >
     <Global
-      styles={theme => ({
+      styles={(theme) => ({
         '.modal-overlay': {
           zIndex: 1000,
           backgroundColor: 'rgba(0, 0, 0, 0.58)',
@@ -122,10 +122,10 @@ const ScoreBoard = ({scores, onClose, ...props}) => (
         },
         '.ReactModal__Overlay--after-open': {
           opacity: 1,
-        }, 
+        },
         '.ReactModal__Overlay--before-close': {
           opacity: 0,
-        }
+        },
       })}
     />
     <Heading
@@ -143,14 +143,11 @@ const ScoreBoard = ({scores, onClose, ...props}) => (
         overflow: 'auto',
       }}
     >
-      <Table
-        columns={columns}
-        data={scores}
-      />
+      <Table columns={columns} data={scores} />
     </Box>
     <Button
       sx={{
-        mt: 3
+        mt: 3,
       }}
       onClick={onClose}
     >

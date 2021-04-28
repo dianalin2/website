@@ -6,13 +6,19 @@ import Link from './link'
 import { cardAnimateProps } from '../animations/animations'
 import datefmt from '../utils/datefmt'
 
-const WriteupCard = ({ frontmatter, excerpt, timeToRead, author, ...props }) => {
+const WriteupCard = ({
+  frontmatter,
+  excerpt,
+  timeToRead,
+  author,
+  ...props
+}) => {
   return (
     <Link
       to={frontmatter.slug}
       sx={{
         textDecoration: 'none',
-        display: 'flex'
+        display: 'flex',
       }}
     >
       <motion.div
@@ -30,7 +36,7 @@ const WriteupCard = ({ frontmatter, excerpt, timeToRead, author, ...props }) => 
           cursor: 'pointer',
           '& > *': {
             flex: '0 1 auto',
-          }
+          },
         }}
       >
         <Text

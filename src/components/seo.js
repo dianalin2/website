@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useLocation } from '@reach/router'
-import { useStaticQuery, graphql, withPrefix, } from 'gatsby'
+import { useStaticQuery, graphql, withPrefix } from 'gatsby'
 
 const SEO = ({ title, description, ...props }) => {
   const { pathname } = useLocation()
@@ -25,8 +25,7 @@ const SEO = ({ title, description, ...props }) => {
   const helmet = {
     title: data.title,
   }
-  if (title)
-    helmet.titleTemplate = titleTemplate
+  if (title) helmet.titleTemplate = titleTemplate
 
   return (
     <Helmet {...helmet} {...props}>
