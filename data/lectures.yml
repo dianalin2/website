@@ -128,3 +128,9 @@
   body: 'Format String attacks in binary exploitation.'
   level: 3
   link: https://docs.google.com/presentation/d/1Ll1a0DThPTc-Lhvpadumc6jzR6tXQ0vj51iehY4jKv4/edit?usp=sharing
+- title: 'Prototype Pollution'
+  date: 2021-05-05
+  body: 'Prototype Pollution in web exploitation.'
+  level: 2
+  guest: true
+  link: https://docs.google.com/presentation/d/1ugMtn5NykxS_3wii81JLs-Zew-S-BsYwqTQbnXxj7oA/edit?usp=sharing
