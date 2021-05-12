@@ -44,7 +44,7 @@ const Writeup = ({ data: { mdx: post } }) => {
       >
         <IoList />
       </IconButton>
-      <Container>
+      <Container sx={{height: '100%'}}>
         <Flex>
           <Flex
             sx={{
@@ -58,6 +58,7 @@ const Writeup = ({ data: { mdx: post } }) => {
               // lmfao
               maxHeight: (theme) =>
                 `calc(100vh - 2 * ${theme.sizes.navbar}px - 2rem)`,
+              height: '100%',
               '& ul': {
                 m: 0,
                 listStyle: 'none',
