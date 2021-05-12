@@ -27,9 +27,9 @@ if "_" in content or "/" in content:
 
 The filter on `/` indicates that path traversal should be prevented. However, the created file's `name` looks odd.
 ```py
-    name = f"static/{url_fix(content[:128])}-{token_urlsafe(8)}.html"
-    with open(name, "w") as f:
-        f.write(content)
+name = f"static/{url_fix(content[:128])}-{token_urlsafe(8)}.html"
+with open(name, "w") as f:
+  f.write(content)
 ```
 
 The filename is the first 128 characters of the content and a random token. It's a bit weird that they're normalizing the path with `url_fix(content[:128])`; that's our first vulnerability. Even though `/` is filtered, `\` is not, and `url_fix()` would normalize the backslashes to be `/`. We could use this to traverse the filesystem.
@@ -54,18 +54,19 @@ How is this useful? Well, we can create our own error template by using our path
 
 We can test a sample payload now:
 ```
-..\\templates\\errors\\
+..\templates\errors\
 ```
 
-If we paste that into the text area on the index page and submit, we get redirected to a `Not Found` error page. Not to worry! Since we wrote to a file outside of the static folder, we can't access it from `/static/...`, which resulted in the 404. However, we can check out our payload by passing our filename (minus extension) into `error`. The path I got redirected to was `///templates//errors//-7-kh4_p7dTY.html` so I went to:
+If we paste that into the text area on the index page and submit, we get redirected to a `Not Found` error page. Not to worry! Since we wrote to a file outside of the static folder, we can't access it from `/static/...`, which resulted in the 404. However, we can check out our payload by passing our filename (minus extension) into `error`. The path I got redirected to was `/templates/errors/-lww21e3EmpA.html` so I went to:
 ```
-https://notepad.mars.picoctf.net/?error=-7-kh4_p7dTY
+https://notepad.mars.picoctf.net/?error=-lww21e3EmpA
 ```
 
 Lo and behold, our payload was printed back to us!
 
-# SSTI Injection
-Since the error page is included as a Jinja template and not as a static page, we can utilize a server-side template injection to retrieve the flag. I found a great [reference](https://medium.com/@nyomanpradipta120/ssti-in-flask-jinja2-20b068fdaeee) that detailed how to implement a SSTI injection with the Jinja template engine.
+# Server-Side Template Injection
+Since the error page is included as a Jinja template and not as a static page, we can utilize a server-side template injection to retrieve the flag. I found a great [reference](https://medium.com/@nyomanpradipta120/ssti-in-flask-jinja2-20b068fdaeee) that detailed how to implement a SSTI with the Jinja template engine.
+
 
 After the path of the `errors` folder, I padded the payload with `a` characters so that none of the injection was stored in the filename. While this is optional, I found that it made the request much cleaner because the filename isn't url encoded.
 
@@ -81,18 +82,20 @@ If we call `object.__subclasses__()`, we can access all the classes that are ava
 p = "..\\templates\\errors\\" + "a" * 128 + "{{ ''[request.args.get('class')].mro()[1][request.args.get('subclasses')]() }}"
 ```
 
-When we access the index page with the filename passed into `error`, we get an internal server error. This is because we didn't pass in the `class` or `subclasses` query parameters. After setting them to `__class__` and `__subclasses__`, respectively, [a whole bunch of stuff is rendered](https://notepad.mars.picoctf.net/?error=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-oiv7lSJ0KoY&class=__class__&subclasses=__subclasses__).
+When we access the index page with the filename passed into `error`, we get an internal server error. This is because we didn't pass in the `class` or `subclasses` query parameters. After setting them to `__class__` and `__subclasses__`, respectively, a whole bunch of stuff is rendered.
+
+![subclasses](./subclasses.png)
 
 Nice! We got a whole bunch of classes from that. The most important of those is `subprocess.Popen`. To find the index of that class more easily, I pasted the stringified list into a Python shell (as a string), split the list on `, `, and called `l.index(" <class 'subprocess.Popen'>")` to find that the `subprocess.Popen` class is at index 273. That means that we can create a new `Popen` object to execute some pretty useful commands.
 
 The provided Dockerfile showed that the flag is located in the app's root directory with a random UUID appended to it. Therefore, we need to find the flag's filename; we can `ls` the root directory and return the result with this injection:
 ```py
-{{ ''[request.args.get('class')][request.args.get('mro')][1][request.args.get('subclasses')]()[273](['ls'], stdout=-1).communicate() }}
+{{ ''[request.args.get('class')].mro()[1][request.args.get('subclasses')]()[273](['ls'], stdout=-1).communicate() }}
 ```
 
 The flag's filename is `flag-c8f5526c-4122-4578-96de-d7dd27193798.txt`. Last but not least, we can `cat` the flag:
 ```py
-{{ ''[request.args.get('class')][request.args.get('mro')][1][request.args.get('subclasses')]()[273](['cat', 'flag-c8f5526c-4122-4578-96de-d7dd27193798.txt'], stdout=-1).communicate() }}
+{{ ''[request.args.get('class')].mro()[1][request.args.get('subclasses')]()[273](['cat', 'flag-c8f5526c-4122-4578-96de-d7dd27193798.txt'], stdout=-1).communicate() }}
 ```
 
 # Flag
